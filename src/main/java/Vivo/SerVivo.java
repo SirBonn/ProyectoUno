@@ -17,7 +17,7 @@ public class SerVivo {
       private int vidaSer;
       private String nombre;
       ImageIcon imagennueva;
-      //private JLabel etiqueta;
+      private int edadSer;
 
       public SerVivo(int Vida, String nombre) {
             this.vidaSer = Vida;
@@ -52,6 +52,27 @@ public class SerVivo {
 
       }
 
+      
+      public void observadorCrecimiento(int edad, String tipo){
+            if (edad == 0) {
+                  System.out.println("tu " +tipo +"aun es joven");
+            } if (edad == 1) {
+                  System.out.println("tu " +tipo +" esta creciendo");
+            } if (edad == 2) {
+                  System.out.println("tu " +tipo +"ya es adulta");
+            } if (edad == 3) {
+                  System.out.println("tu" +tipo +"murio de vejez");
+            }
+      }
+
+      public int getEdadSer() {
+            return edadSer;
+      }
+
+      public void setEdadSer(int edadSer) {
+            this.edadSer = edadSer;
+      }
+      
       public String getNombre() {
             return nombre;
       }

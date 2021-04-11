@@ -1,5 +1,6 @@
 TiposTerrenos\TipoTerreno.class
 Ventanas\VentanaIngreso$3.class
+Ventanas\OpcionesTierra$2.class
 TiposTerrenos\Agua.class
 Ventanas\VentanaIngreso.class
 Terrenos\Terreno.class
@@ -19,6 +20,7 @@ Ventanas\JuegoPrincipal.class
 Terrenos\ManejadorTerreno.class
 TiposTerrenos\Desierto.class
 Ventanas\JuegoPrincipal$1.class
+Vivo\planta.class
 Ventanas\VentanaIngreso$4.class
 Terrenos\Granja.class
 Ventanas\OpcionesAgua$1.class

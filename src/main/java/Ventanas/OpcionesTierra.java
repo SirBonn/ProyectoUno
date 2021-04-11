@@ -5,15 +5,16 @@
  */
 package Ventanas;
 
+import Vivo.planta;
+
 /**
  *
  * @author byron
  */
 public class OpcionesTierra extends javax.swing.JFrame {
 
-      /**
-       * Creates new form OpcionesAgua
-       */
+      private planta planta;
+      
       public OpcionesTierra() {
             initComponents();
       }
@@ -46,6 +47,11 @@ public class OpcionesTierra extends javax.swing.JFrame {
             getContentPane().add(regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 212, -1, -1));
 
             Sembrar.setText("Sembrar");
+            Sembrar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        SembrarActionPerformed(evt);
+                  }
+            });
             getContentPane().add(Sembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 174, 83, -1));
 
             fondotierra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/galloSembradorFondo.jpg"))); // NOI18N
@@ -57,6 +63,11 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
             setVisible(false);
       }//GEN-LAST:event_regresarActionPerformed
+
+      private void SembrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SembrarActionPerformed
+           planta = new planta("planta", 100, "planta1");
+           planta.plantaNueva();
+      }//GEN-LAST:event_SembrarActionPerformed
 
 
       // Variables declaration - do not modify//GEN-BEGIN:variables

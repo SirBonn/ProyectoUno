@@ -19,7 +19,7 @@ public class Vida extends Thread{
             this.serVivo = serVivo;
             this.decaimiento = decaimiento;
       }
-      
+
       @Override
       public void run(){
             int hp = this.vida;
