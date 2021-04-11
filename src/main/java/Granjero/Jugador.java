@@ -1,34 +1,50 @@
 package Granjero;
 
-public class Jugador {
+import Vivo.SerVivo;
 
-    private String nombre;
+public class Jugador extends  SerVivo{
+
+    private String nombrevivo;
     private String nick;
     private int monedas;
-    private int puntosVida;
+//    private int puntosVida;
 
-    public Jugador(String nombre, String nick, int monedas, int puntosVIda) {
-        this.nombre = nombre;
-        this.nick = nick;
-        this.monedas = monedas;
-        this.puntosVida = puntosVIda;
-    }
+      public Jugador(String nombre, String nick, int monedas, int Vida) {
+            super(Vida, nick);
+            this.nombrevivo = nombre;
+            this.nick = nick;
+            this.monedas = monedas;
+      }
+
     
-    public String getNombre() {
-        return nombre;
+    
+//    public Jugador(String nombre, String nick, int monedas, int puntosVIda) {
+//        this.nombre = nombre;
+//        this.nick = nick;
+//        this.monedas = monedas;
+//        this.puntosVida = puntosVIda;
+//    }
+   
+    public String getNombrevivo() {
+        return nombrevivo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrevivo(String nombre) {
+        this.nombrevivo = nombre;
     }
 
     public void setMonedas(int monedas) {
         this.monedas = monedas;
     }
 
-    public void setPuntosVida(int puntosVida) {
-        this.puntosVida = puntosVida;
-    }
+//    public void setPuntosVida(int puntosVida) {
+//        this.puntosVida = puntosVida;
+//    }
+//
+//    
+//    public int getPuntosVida() {
+//        return puntosVida;
+//    }
 
     public String getNick() {
         return nick;
@@ -40,10 +56,6 @@ public class Jugador {
 
     public int getMonedas() {
         return monedas;
-    }
-
-    public int getPuntosVida() {
-        return puntosVida;
     }
 
 }

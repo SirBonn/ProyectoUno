@@ -21,11 +21,12 @@ Ventanas\OpcionesTierra$1.class
 Terrenos\CreadorTerreno$1.class
 ipc1\seccion\a\granja\RunSquareFarm.class
 Ventanas\OpcionesAgua.class
-Plantas\Planta.class
+Vivo\SerVivo.class
 Procesos\Crecer.class
-Animales\Animal.class
+Granjero\ManejadorJugador.class
 Ventanas\OpcionesDesierto$1.class
 Ventanas\VentanaIngreso$5.class
+Procesos\Vida.class
 Terrenos\CreadorTerreno.class
 TiposTerrenos\Tierra.class
 Ventanas\OpcionesDesierto.class

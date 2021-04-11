@@ -20,7 +20,6 @@ public class Tierra extends TipoTerreno{
             this.parcela = parcela;
       }
      
-     
       @Override
       public String toString() {
             return "Tierra";

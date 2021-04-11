@@ -32,12 +32,10 @@ public class CreadorTerreno {
                                     System.out.println("hola soy un " + celdaSueloCreado.getTipoTerreno() + " en: (" + celdaSueloCreado.getNumeroFila() + ", "
                                            + celdaSueloCreado.getNumeroColumna()+")");
                                     manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), evt.getXOnScreen(), evt.getYOnScreen());
-                              }
-                              
+                              }   
                         });
                   }
             }
-            
             return SueloTerreno;
       }
 
