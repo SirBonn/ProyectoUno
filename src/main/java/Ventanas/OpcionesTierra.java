@@ -5,6 +5,7 @@
  */
 package Ventanas;
 
+import Plantas.ManejadorPlanta;
 import Vivo.planta;
 
 /**
@@ -27,6 +28,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
       // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
       private void initComponents() {
 
+            jLabel1 = new javax.swing.JLabel();
             regresar = new javax.swing.JButton();
             Sembrar = new javax.swing.JButton();
             fondotierra = new javax.swing.JLabel();
@@ -37,6 +39,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
             setResizable(false);
             setType(java.awt.Window.Type.UTILITY);
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            jLabel1.setText("jLabel1");
+            getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 30));
 
             regresar.setText("Regresar");
             regresar.addActionListener(new java.awt.event.ActionListener() {
@@ -66,13 +71,15 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
       private void SembrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SembrarActionPerformed
            planta = new planta("planta", 100, "planta1");
-           planta.plantaNueva();
+            ManejadorPlanta manejadorPlanta = new ManejadorPlanta(planta);
+            manejadorPlanta.VidaJugador(jLabel1);
       }//GEN-LAST:event_SembrarActionPerformed
 
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JButton Sembrar;
       private javax.swing.JLabel fondotierra;
+      private javax.swing.JLabel jLabel1;
       private javax.swing.JButton regresar;
       // End of variables declaration//GEN-END:variables
 }

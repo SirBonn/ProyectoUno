@@ -26,6 +26,7 @@ Terrenos\Granja.class
 Ventanas\OpcionesAgua$1.class
 Ventanas\VentanaIngreso$1.class
 Granjero\Jugador.class
+Plantas\ManejadorPlanta.class
 Ventanas\VentanaIngreso$2.class
 Procesos\Crecer.class
 Ventanas\VentanaIngreso$5.class
