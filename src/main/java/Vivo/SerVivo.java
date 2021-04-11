@@ -6,6 +6,7 @@
 package Vivo;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -18,10 +19,14 @@ public class SerVivo {
       private String nombre;
       ImageIcon imagennueva;
       private int edadSer;
+      private int decrecimiento;
+      private int crecimiento;
 
-      public SerVivo(int Vida, String nombre) {
+      public SerVivo(int Vida, String nombre, int decrecimiento, int crecimiento) {
             this.vidaSer = Vida;
             this.nombre = nombre;
+            this.crecimiento = crecimiento;
+            this.decrecimiento = decrecimiento;
       }
 
       public void observadorVida(JLabel etiqueta) {
@@ -53,9 +58,11 @@ public class SerVivo {
       }
 
       
-      public void observadorCrecimiento(int edad, String tipo){
+      public void observadorCrecimiento(int edad, String tipo, JButton boton){
             if (edad == 0) {
                   System.out.println("tu " +tipo +"aun es joven");
+                    imagennueva = new ImageIcon(getClass().getClassLoader().getResource("texturaTierraMaiz.jpg"));
+                    boton.setIcon(imagennueva);
             } if (edad == 1) {
                   System.out.println("tu " +tipo +" esta creciendo");
             } if (edad == 2) {
@@ -65,6 +72,22 @@ public class SerVivo {
             }
       }
 
+      public int getDecrecimiento() {
+            return decrecimiento;
+      }
+
+      public void setDecrecimiento(int decrecimiento) {
+            this.decrecimiento = decrecimiento;
+      }
+
+      public int getCrecimiento() {
+            return crecimiento;
+      }
+
+      public void setCrecimiento(int crecimiento) {
+            this.crecimiento = crecimiento;
+      }
+      
       public int getEdadSer() {
             return edadSer;
       }

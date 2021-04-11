@@ -1,13 +1,13 @@
 package Terrenos;
 
-import javax.swing.JPanel;
 import Ventanas.*;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class ManejadorTerreno {
 
       private JPanel sueloJPanel;
       private Terreno[][] distribucionSuelos;
+      private JButton botonSelec;
       OpcionesAgua ventanaAgua; //= new OpcionesAgua();
       OpcionesDesierto ventanaDesierto = new OpcionesDesierto();
       OpcionesTierra ventanaTierra; // = new OpcionesTierra();
@@ -15,6 +15,10 @@ public class ManejadorTerreno {
       public ManejadorTerreno() {
       }
 
+      public ManejadorTerreno(JButton botonSelec) {
+            this.botonSelec = botonSelec;
+      }
+      
       public ManejadorTerreno(JPanel sueloJPanel, Terreno[][] distribucionSuelos) {
             this.sueloJPanel = sueloJPanel;
             this.distribucionSuelos = distribucionSuelos;
@@ -49,4 +53,13 @@ public class ManejadorTerreno {
                   return ventanaDesierto;
             }
       }
+      
+            public JButton getBotonSelec() {
+            return botonSelec;
+      }
+
+      public void setBotonSelec(JButton botonSelec) {
+            this.botonSelec = botonSelec;
+      }
+      
 }

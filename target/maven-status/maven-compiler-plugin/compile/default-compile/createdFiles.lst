@@ -1,4 +1,6 @@
 TiposTerrenos\TipoTerreno.class
+Plantas\Maiz.class
+Plantas\Frijol.class
 Ventanas\VentanaIngreso$3.class
 Ventanas\OpcionesTierra$2.class
 TiposTerrenos\Agua.class
@@ -6,6 +8,7 @@ Ventanas\VentanaIngreso.class
 Terrenos\Terreno.class
 Ventanas\VentanaIngreso$6.class
 Terrenos\PobabilidadTerreno.class
+Ventanas\OpcionesTierra$8.class
 Ventanas\OpcionesTierra$1.class
 Terrenos\CreadorTerreno$1.class
 ipc1\seccion\a\granja\RunSquareFarm.class
@@ -13,14 +16,17 @@ Ventanas\OpcionesAgua.class
 Vivo\SerVivo.class
 Granjero\ManejadorJugador.class
 Ventanas\OpcionesDesierto$1.class
+Ventanas\OpcionesTierra$5.class
 Procesos\Vida.class
 Ventanas\OpcionesDesierto.class
+Ventanas\OpcionesTierra$7.class
 Ventanas\OpcionesTierra.class
 Ventanas\JuegoPrincipal.class
 Terrenos\ManejadorTerreno.class
 TiposTerrenos\Desierto.class
 Ventanas\JuegoPrincipal$1.class
 Vivo\planta.class
+Ventanas\OpcionesTierra$4.class
 Ventanas\VentanaIngreso$4.class
 Terrenos\Granja.class
 Ventanas\OpcionesAgua$1.class
@@ -28,6 +34,8 @@ Ventanas\VentanaIngreso$1.class
 Granjero\Jugador.class
 Plantas\ManejadorPlanta.class
 Ventanas\VentanaIngreso$2.class
+Ventanas\OpcionesTierra$3.class
+Ventanas\OpcionesTierra$6.class
 Procesos\Crecer.class
 Ventanas\VentanaIngreso$5.class
 Terrenos\CreadorTerreno.class

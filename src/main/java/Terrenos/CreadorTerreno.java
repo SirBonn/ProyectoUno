@@ -25,19 +25,21 @@ public class CreadorTerreno {
                         
                         nuevaSuperficieTerreno.addMouseListener(new java.awt.event.MouseAdapter() {
                               @Override
-                              public void mouseClicked(java.awt.event.MouseEvent evt) {
+                              public void mouseClicked (java.awt.event.MouseEvent evt) {
                                     
                                     SuperficieTerreno celdaSueloCreado = (SuperficieTerreno) evt.getComponent();
+                                     ManejadorTerreno manejadorTerreno = new ManejadorTerreno(celdaSueloCreado);
+                                     manejadorTerreno.setBotonSelec(celdaSueloCreado);
                                     System.out.println("hola soy un " + celdaSueloCreado.getTipoTerreno() + " en: (" + celdaSueloCreado.getNumeroFila() + ", "
                                            + celdaSueloCreado.getNumeroColumna()+")");
                                            // manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), );
                                            celdaSueloCreado.getFrameventana().setVisible(true);
                                            celdaSueloCreado.getFrameventana().setLocation(evt.getXOnScreen(), evt.getYOnScreen());
+                                          
                               }   
                         });
                   }
             }
             return SueloTerreno;
       }
-
 }

@@ -9,7 +9,7 @@ public class Jugador extends  SerVivo{
     private int monedas;
 
       public Jugador(String nombre, String nick, int monedas, int Vida) {
-            super(Vida, nick);
+            super(Vida, nick, 0, 0);
             this.nombrevivo = nombre;
             this.nick = nick;
             this.monedas = monedas;

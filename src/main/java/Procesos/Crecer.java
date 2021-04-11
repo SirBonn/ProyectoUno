@@ -23,7 +23,7 @@ public class Crecer extends Thread {
                   edad = i;
                   System.out.println("edad ahora: " + edad);
                   serVivo.setEdadSer(i);
-                  serVivo.observadorCrecimiento(i, "nuevoslñdka");
+                  serVivo.observadorCrecimiento(i, "nuevoslñdka", this.botonpulsado);
                   try {
                         Vida.sleep(velocidadcrecimiento);
                   } catch (InterruptedException e) {

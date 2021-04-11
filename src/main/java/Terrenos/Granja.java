@@ -13,6 +13,7 @@ public class Granja {
 
       private Terreno[][] suelo;
       
+      
       public Granja() {
              CreadorTerreno creadorTerreno = new CreadorTerreno();
             this.suelo = creadorTerreno.crearTerrenoInicial();
