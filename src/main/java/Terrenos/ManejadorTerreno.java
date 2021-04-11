@@ -8,13 +8,13 @@ public class ManejadorTerreno {
 
       private JPanel sueloJPanel;
       private Terreno[][] distribucionSuelos;
-      OpcionesAgua ventanaAgua = new OpcionesAgua();
+      OpcionesAgua ventanaAgua; //= new OpcionesAgua();
       OpcionesDesierto ventanaDesierto = new OpcionesDesierto();
-      OpcionesTierra ventanaTierra = new OpcionesTierra();
+      OpcionesTierra ventanaTierra; // = new OpcionesTierra();
 
       public ManejadorTerreno() {
       }
-      
+
       public ManejadorTerreno(JPanel sueloJPanel, Terreno[][] distribucionSuelos) {
             this.sueloJPanel = sueloJPanel;
             this.distribucionSuelos = distribucionSuelos;
@@ -30,20 +30,22 @@ public class ManejadorTerreno {
             }
       }
 
-      public JFrame opcionesTerreno(String celdarecibida, int posX, int posY) {
+      public JFrame opcionesTerreno(String celdarecibida) {
 
             if ("Agua".equals(celdarecibida)) {
-                  ventanaAgua.setLocation(posX, posY);
-                  ventanaAgua.setVisible(true);
+                  ventanaAgua = new OpcionesAgua();
+//                  ventanaAgua.setLocation(posX, posY);
+//                  ventanaAgua.setVisible(true);
                   return ventanaAgua;
             }
             if ("Tierra".equals(celdarecibida)) {
-                  ventanaTierra.setLocation(posX, posY);
-                  ventanaTierra.setVisible(true);
+                  ventanaTierra = new OpcionesTierra();
+
+//                  ventanaTierra.setLocation(posX, posY);
+//                  ventanaTierra.setVisible(true);
                   return ventanaTierra;
             } else {
-                  ventanaDesierto.setLocation(posX, posY);
-                  ventanaDesierto.setVisible(true);
+                  
                   return ventanaDesierto;
             }
       }

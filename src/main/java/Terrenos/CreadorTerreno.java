@@ -18,8 +18,7 @@ public class CreadorTerreno {
             for (int x = 0; x < 5; x++) {
                   for (int y = 0; y < 5; y++) {
                         String terretipe = tipo.randomTerreno().toString();
-                        
-                        SuperficieTerreno nuevaSuperficieTerreno = new SuperficieTerreno(x, y, terretipe, tipo.getImagen());
+                        SuperficieTerreno nuevaSuperficieTerreno = new SuperficieTerreno(x, y, terretipe, tipo.getImagen(),manej.opcionesTerreno(terretipe));
                         TipoTerreno terrenoRandom = tipo.randomTerreno();
                         celdaTerreno = new Terreno(terrenoRandom, nuevaSuperficieTerreno);
                         SueloTerreno[x][y] = celdaTerreno;
@@ -31,7 +30,9 @@ public class CreadorTerreno {
                                     SuperficieTerreno celdaSueloCreado = (SuperficieTerreno) evt.getComponent();
                                     System.out.println("hola soy un " + celdaSueloCreado.getTipoTerreno() + " en: (" + celdaSueloCreado.getNumeroFila() + ", "
                                            + celdaSueloCreado.getNumeroColumna()+")");
-                                    manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), evt.getXOnScreen(), evt.getYOnScreen());
+                                           // manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), );
+                                           celdaSueloCreado.getFrameventana().setVisible(true);
+                                           celdaSueloCreado.getFrameventana().setLocation(evt.getXOnScreen(), evt.getYOnScreen());
                               }   
                         });
                   }
