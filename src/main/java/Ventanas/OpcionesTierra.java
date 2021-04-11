@@ -28,12 +28,14 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
             regresar = new javax.swing.JButton();
             Sembrar = new javax.swing.JButton();
+            fondotierra = new javax.swing.JLabel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
             setAlwaysOnTop(true);
             setUndecorated(true);
             setResizable(false);
             setType(java.awt.Window.Type.UTILITY);
+            getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             regresar.setText("Regresar");
             regresar.addActionListener(new java.awt.event.ActionListener() {
@@ -41,29 +43,13 @@ public class OpcionesTierra extends javax.swing.JFrame {
                         regresarActionPerformed(evt);
                   }
             });
+            getContentPane().add(regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 212, -1, -1));
 
             Sembrar.setText("Sembrar");
+            getContentPane().add(Sembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 174, 83, -1));
 
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
-            layout.setHorizontalGroup(
-                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(161, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                              .addComponent(regresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                              .addComponent(Sembrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-            );
-            layout.setVerticalGroup(
-                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(174, Short.MAX_VALUE)
-                        .addComponent(Sembrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(regresar)
-                        .addContainerGap())
-            );
+            fondotierra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/galloSembradorFondo.jpg"))); // NOI18N
+            getContentPane().add(fondotierra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
             pack();
       }// </editor-fold>//GEN-END:initComponents
@@ -75,6 +61,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JButton Sembrar;
+      private javax.swing.JLabel fondotierra;
       private javax.swing.JButton regresar;
       // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,7 @@ public class ManejadorTerreno {
 
       private JPanel sueloJPanel;
       private Terreno[][] distribucionSuelos;
-            OpcionesAgua ventanaAgua = new OpcionesAgua();
+      OpcionesAgua ventanaAgua = new OpcionesAgua();
       OpcionesDesierto ventanaDesierto = new OpcionesDesierto();
       OpcionesTierra ventanaTierra = new OpcionesTierra();
 

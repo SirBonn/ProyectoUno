@@ -46,7 +46,7 @@ public class SerVivo {
             }
             if (this.vidaSer == 0) {
                   System.out.println("ya te petatiaste");
-                  imagennueva = new ImageIcon(getClass().getClassLoader().getResource("CorazonMuerte.jpg"));
+                  imagennueva = new ImageIcon(getClass().getClassLoader().getResource("CorazonMuerte.png"));
                   etiqueta.setIcon(imagennueva);
             }
 

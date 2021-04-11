@@ -28,12 +28,14 @@ public class OpcionesAgua extends javax.swing.JFrame {
 
             regresar = new javax.swing.JButton();
             Pescar = new javax.swing.JButton();
+            fondoPescador = new javax.swing.JLabel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
             setAlwaysOnTop(true);
             setUndecorated(true);
             setResizable(false);
             setType(java.awt.Window.Type.UTILITY);
+            getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             regresar.setText("Regresar");
             regresar.addActionListener(new java.awt.event.ActionListener() {
@@ -41,29 +43,13 @@ public class OpcionesAgua extends javax.swing.JFrame {
                         regresarActionPerformed(evt);
                   }
             });
+            getContentPane().add(regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 212, -1, -1));
 
             Pescar.setText("Pescar");
+            getContentPane().add(Pescar, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 174, 83, -1));
 
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
-            layout.setHorizontalGroup(
-                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(161, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addComponent(Pescar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addComponent(regresar))
-                        .addContainerGap())
-            );
-            layout.setVerticalGroup(
-                  layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(174, Short.MAX_VALUE)
-                        .addComponent(Pescar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(regresar)
-                        .addContainerGap())
-            );
+            fondoPescador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/galloPescadorFondo.jpg"))); // NOI18N
+            getContentPane().add(fondoPescador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 250));
 
             pack();
       }// </editor-fold>//GEN-END:initComponents
@@ -75,6 +61,7 @@ public class OpcionesAgua extends javax.swing.JFrame {
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JButton Pescar;
+      private javax.swing.JLabel fondoPescador;
       private javax.swing.JButton regresar;
       // End of variables declaration//GEN-END:variables
 }
