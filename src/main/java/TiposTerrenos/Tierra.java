@@ -52,11 +52,11 @@ public class Tierra extends TipoTerreno{
       }
       
       public void cosechar(SerVivo planta){
-            if (planta.getEdadSer() == 2) {
+            if (planta.getEdadSer() == 3) {
                   System.out.println("acabas de cosechar, has recibido 2 mazorcas");
-            } if (planta.getEdadSer() < 2) {
+            } if (planta.getEdadSer() <= 2) {
                   System.out.println("espera un poco mas, la cosecha casi esta lista");
-            } else {
+            } else if (planta.getEdadSer() == 4){
                   System.out.println("oh esta muerta, te recomiendo limpiar el terreno");
             }
             

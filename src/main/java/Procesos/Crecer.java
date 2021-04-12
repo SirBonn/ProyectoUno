@@ -2,7 +2,7 @@ package Procesos;
 
 import Terrenos.SuperficieTerreno;
 import Vivo.SerVivo;
-import javax.swing.JButton;
+import Vivo.planta;
 import javax.swing.JLabel;
 
 public class Crecer extends Thread {
@@ -10,18 +10,19 @@ public class Crecer extends Thread {
       private SuperficieTerreno botonpulsado;
       private int velocidadcrecimiento;
       private SerVivo serVivo;
+      private planta planta;
       private JLabel edadJLabel;
       private JLabel imagenEdad;
       private int increment;
       private Vida vida;
 
-      public Crecer(int velocidadcrecimiento, SerVivo serVivo, JLabel edadJLabel, JLabel imagenEdad, Vida vida) {
+      public Crecer(int velocidadcrecimiento, planta planta, SerVivo serVivo, JLabel edadJLabel, JLabel imagenEdad, Vida vida) {
             this.velocidadcrecimiento = velocidadcrecimiento;
             this.serVivo = serVivo;
             this.edadJLabel = edadJLabel;
             this.imagenEdad = imagenEdad;
             this.vida = vida;
-
+            this.planta =  planta;
       }
 
       public void incrementoedad(int increment) {
@@ -34,14 +35,14 @@ public class Crecer extends Thread {
             while (!interrupted()) {
 
                   int edad = serVivo.getEdadSer();
-                  for (int i = edad; i < 5; i++) {
+                  for (int i = edad+1; i < 5; i++) {
 
-                        serVivo.observadorCrecimiento(serVivo.getEdadSer(), serVivo.getNombre(), edadJLabel, imagenEdad, this, vida);
+                        serVivo.observadorCrecimiento(serVivo.getEdadSer(), planta, serVivo.getNombre(), edadJLabel, imagenEdad, this, vida);
                         try {
                               
                               serVivo.setEdadSer((i) + increment);
                               edadJLabel.setText("Edad: " + serVivo.getEdadSer());
-                              Vida.sleep(5000);
+                              Vida.sleep(velocidadcrecimiento);
                         } catch (InterruptedException e) {
                               serVivo.setVidaSer(0);
                               interrupted();
@@ -49,7 +50,6 @@ public class Crecer extends Thread {
                         }
                   }
             } 
-            
             System.out.println("tu planta murio");
             vida.isInterrupted();
             

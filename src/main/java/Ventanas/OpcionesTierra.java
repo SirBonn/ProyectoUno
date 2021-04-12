@@ -1,8 +1,7 @@
 package Ventanas;
 
-import Plantas.Maiz;
+import Plantas.*;
 import Plantas.ManejadorPlanta;
-import Vivo.planta;
 import Terrenos.*;
 import TiposTerrenos.Tierra;
 import Vivo.SerVivo;
@@ -78,11 +77,6 @@ public class OpcionesTierra extends javax.swing.JFrame {
             Maiz.addMouseListener(new java.awt.event.MouseAdapter() {
                   public void mouseClicked(java.awt.event.MouseEvent evt) {
                         MaizMouseClicked(evt);
-                  }
-            });
-            Maiz.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        MaizActionPerformed(evt);
                   }
             });
             Semillas.add(Maiz);
@@ -210,27 +204,39 @@ public class OpcionesTierra extends javax.swing.JFrame {
       }//GEN-LAST:event_colocarAnimalesMouseReleased
 
       private void TamarindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamarindoActionPerformed
-
-      }//GEN-LAST:event_TamarindoActionPerformed
-
-      private void AguacaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AguacaeActionPerformed
-
-      }//GEN-LAST:event_AguacaeActionPerformed
-
-      private void MaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaizActionPerformed
-            Maiz maiz = new Maiz();
-            this.planta =maiz;
-            tierra.sembrar(maiz, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            TamarindoArbol tamarindo = new TamarindoArbol();
+            this.planta =tamarindo;
+            tierra.sembrar(tamarindo, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
             this.tierra.setLibre(false);
             colocarAnimales.setVisible(false);
             botonCosechador.setVisible(true);
             botonFertilizante.setVisible(true);
             botonLimpiador.setVisible(true);
             botonRegar.setVisible(true);
-      }//GEN-LAST:event_MaizActionPerformed
+      }//GEN-LAST:event_TamarindoActionPerformed
+
+      private void AguacaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AguacaeActionPerformed
+            AguacateArbol aguacate = new AguacateArbol();
+            this.planta =aguacate;
+            tierra.sembrar(aguacate, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            this.tierra.setLibre(false);
+            colocarAnimales.setVisible(false);
+            botonCosechador.setVisible(true);
+            botonFertilizante.setVisible(true);
+            botonLimpiador.setVisible(true);
+            botonRegar.setVisible(true);
+      }//GEN-LAST:event_AguacaeActionPerformed
 
       private void FrijolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrijolesActionPerformed
-            
+            Frijol frijol = new Frijol();
+            this.planta = frijol;
+            tierra.sembrar(frijol, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            this.tierra.setLibre(false);
+            colocarAnimales.setVisible(false);
+            botonCosechador.setVisible(true);
+            botonFertilizante.setVisible(true);
+            botonLimpiador.setVisible(true);
+            botonRegar.setVisible(true);
       }//GEN-LAST:event_FrijolesActionPerformed
 
       private void MaizMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaizMouseClicked

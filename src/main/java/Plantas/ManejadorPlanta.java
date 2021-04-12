@@ -4,7 +4,6 @@ package Plantas;
 import Procesos.*;
 import Vivo.*;
 import Terrenos.*;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class ManejadorPlanta {
@@ -23,7 +22,7 @@ public class ManejadorPlanta {
 
       public void sembrar (JLabel vidaJLabel, planta planta,JLabel edadJLabel, JLabel imaJLabel) {
             vidaPlanta = new Vida(planta.getVidaSer(), vidaJLabel, planta, planta.getCrecimiento());
-            crecer = new Crecer(planta.getDecrecimiento(), planta, edadJLabel, imaJLabel, vidaPlanta);
+            crecer = new Crecer(planta.getDecrecimiento(), planta, planta, edadJLabel, imaJLabel, vidaPlanta);
             crecer.start();
             vidaPlanta.start();
       }

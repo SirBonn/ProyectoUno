@@ -3,18 +3,19 @@ package Plantas;
 import Vivo.*;
 import javax.swing.ImageIcon;
 
-public class Frijol extends planta {
 
+public class AguacateArbol extends planta{
+      
       private ImageIcon imagen0 = new ImageIcon(getClass().getClassLoader().getResource("maiz0.png"));
       private ImageIcon imagen1 = new ImageIcon(getClass().getClassLoader().getResource("maiz1.png"));
       private ImageIcon imagen2 = new ImageIcon(getClass().getClassLoader().getResource("maiz2.png"));
       private ImageIcon imagen3 = new ImageIcon(getClass().getClassLoader().getResource("maiz3.png"));
       
-      public Frijol () {
-            super("Frijol", 100, "Frijol", 60000 , 3000);
+      public AguacateArbol () {
+            super("Tamarindo", 200, "Tamarindo", 120000 , 5000);
             //planta tipo maiz, con 100 de vida, de nombre maiz, que a cada 60 seg crece 1nivel y cada 9 segundos pierde 1 de vida--
       }
-      
+
       @Override
       public ImageIcon getImagen0() {
             return imagen0;
@@ -55,4 +56,3 @@ public class Frijol extends planta {
       }
       
 }
-

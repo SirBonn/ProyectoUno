@@ -7,8 +7,6 @@ package Vivo;
 
 import Procesos.Crecer;
 import Procesos.Vida;
-import java.lang.InterruptedException;
-import Terrenos.SuperficieTerreno;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -67,22 +65,22 @@ public class SerVivo {
             }
       }
 
-      public void observadorCrecimiento(int edad, String tipo, JLabel edadJLabel, JLabel imagenEdad, Crecer crecer, Vida vida) {
+      public void observadorCrecimiento(int edad, planta planta,String tipo, JLabel edadJLabel, JLabel imagenEdad, Crecer crecer, Vida vida) {
             if (edad == 0) {
                   imagenEdad.setVisible(true);
-                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz0.png")));
+                  imagenEdad.setIcon(planta.getImagen0());
                   System.out.println("tu " + tipo + " aun es joven");
             }
             if (edad == 1) {
-                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz1.png")));
+                  imagenEdad.setIcon(planta.getImagen1());
                   System.out.println("tu " + tipo + " esta creciendo");
             }
             if (edad == 2) {
-                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz2.png")));
+                  imagenEdad.setIcon(planta.getImagen2());
                   System.out.println("tu " + tipo + " ya es adulta");
             }
             if (edad == 3) {
-                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz3.png")));
+                  imagenEdad.setIcon(planta.getImagen3());
                   System.out.println("tu " + tipo + " murio de vejez");
                   crecer.interrupt();
                   vida.interrupt();
