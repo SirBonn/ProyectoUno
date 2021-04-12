@@ -5,22 +5,32 @@
  */
 package Vivo;
 
+import Procesos.Crecer;
+import Procesos.Vida;
+import java.lang.InterruptedException;
+import Terrenos.SuperficieTerreno;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
+ * a
  *
  * @author byron
  */
 public class SerVivo {
 
+      private JButton botonselec;
       private int vidaSer;
       private String nombre;
       ImageIcon imagennueva;
       private int edadSer;
       private int decrecimiento;
       private int crecimiento;
+
+      public SerVivo(JButton botonselect) {
+            this.botonselec = botonselect;
+      }
 
       public SerVivo(int Vida, String nombre, int decrecimiento, int crecimiento) {
             this.vidaSer = Vida;
@@ -29,12 +39,12 @@ public class SerVivo {
             this.decrecimiento = decrecimiento;
       }
 
-      public void observadorVida(JLabel etiqueta) {
-            if (this.vidaSer > 75) {
+      public void observadorVida(JLabel etiqueta, int vida, Vida vidaHilo) {
+            if (vida > 75) {
                   imagennueva = new ImageIcon(getClass().getClassLoader().getResource("Corazon.png"));
                   etiqueta.setIcon(imagennueva);
             }
-            if (this.vidaSer < 75 && this.vidaSer > 50) {
+            if (vida < 75 && this.vidaSer > 50) {
                   System.out.println("te estas debilitando, recuerda comer algo");
                   imagennueva = new ImageIcon(getClass().getClassLoader().getResource("Corazoncuarto.png"));
                   etiqueta.setIcon(imagennueva);
@@ -49,27 +59,42 @@ public class SerVivo {
                   imagennueva = new ImageIcon(getClass().getClassLoader().getResource("Corazontrescuartos.png"));
                   etiqueta.setIcon(imagennueva);
             }
-            if (this.vidaSer == 0) {
+            if (this.vidaSer <= 0) {
                   System.out.println("ya te petatiaste");
                   imagennueva = new ImageIcon(getClass().getClassLoader().getResource("CorazonMuerte.png"));
                   etiqueta.setIcon(imagennueva);
+                  vidaHilo.interrupted();
             }
-
       }
 
-      
-      public void observadorCrecimiento(int edad, String tipo, JButton boton){
+      public void observadorCrecimiento(int edad, String tipo, JLabel edadJLabel, JLabel imagenEdad, Crecer crecer, Vida vida) {
             if (edad == 0) {
-                  System.out.println("tu " +tipo +"aun es joven");
-                    imagennueva = new ImageIcon(getClass().getClassLoader().getResource("texturaTierraMaiz.jpg"));
-                    boton.setIcon(imagennueva);
-            } if (edad == 1) {
-                  System.out.println("tu " +tipo +" esta creciendo");
-            } if (edad == 2) {
-                  System.out.println("tu " +tipo +"ya es adulta");
-            } if (edad == 3) {
-                  System.out.println("tu" +tipo +"murio de vejez");
+                  imagenEdad.setVisible(true);
+                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz0.png")));
+                  System.out.println("tu " + tipo + " aun es joven");
             }
+            if (edad == 1) {
+                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz1.png")));
+                  System.out.println("tu " + tipo + " esta creciendo");
+            }
+            if (edad == 2) {
+                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz2.png")));
+                  System.out.println("tu " + tipo + " ya es adulta");
+            }
+            if (edad == 3) {
+                  imagenEdad.setIcon(new ImageIcon(getClass().getClassLoader().getResource("maiz3.png")));
+                  System.out.println("tu " + tipo + " murio de vejez");
+                  crecer.interrupt();
+                  vida.interrupt();
+            }
+      }
+
+      public JButton getBotonselec() {
+            return botonselec;
+      }
+
+      public void setBotonselec(JButton botonselec) {
+            this.botonselec = botonselec;
       }
 
       public int getDecrecimiento() {
@@ -87,7 +112,7 @@ public class SerVivo {
       public void setCrecimiento(int crecimiento) {
             this.crecimiento = crecimiento;
       }
-      
+
       public int getEdadSer() {
             return edadSer;
       }
@@ -95,7 +120,7 @@ public class SerVivo {
       public void setEdadSer(int edadSer) {
             this.edadSer = edadSer;
       }
-      
+
       public String getNombre() {
             return nombre;
       }
@@ -104,11 +129,11 @@ public class SerVivo {
             this.nombre = nombre;
       }
 
-      public int getVida() {
+      public int getVidaSer() {
             return vidaSer;
       }
 
-      public void setVida(int Vida) {
+      public void setVidaSer(int Vida) {
             this.vidaSer = Vida;
       }
 

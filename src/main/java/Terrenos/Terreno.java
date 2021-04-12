@@ -7,6 +7,10 @@ public class Terreno {
       private TipoTerreno tipoTerreno;
       private SuperficieTerreno superficieTerreno;
 
+      public Terreno() {
+      }
+
+      
       public Terreno(TipoTerreno tipoTerreno, SuperficieTerreno superficieTerreno) {
             this.tipoTerreno = tipoTerreno;
             this.superficieTerreno = superficieTerreno;

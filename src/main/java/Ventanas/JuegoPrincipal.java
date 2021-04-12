@@ -78,7 +78,7 @@ public class JuegoPrincipal extends javax.swing.JFrame {
       }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          System.out.println("Hola " + jugador.getNick()+" tu vida ahora es de: " +jugador.getVida());
+          System.out.println("Hola " + jugador.getNick()+" tu vida ahora es de: " +jugador.getVidaSer());
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

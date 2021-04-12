@@ -24,7 +24,7 @@ public class ManejadorJugador {
       }
 
       public void VidaJugador(JLabel vidaJLabel) {
-            vida = new Vida(jugador.getVida(), vidaJLabel, jugador, 1000);
+            vida = new Vida(jugador.getVidaSer(), vidaJLabel, jugador, 1000);
             vida.start();
       }
 

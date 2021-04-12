@@ -13,6 +13,8 @@ public class SuperficieTerreno extends JButton{
       private JFrame frameventana;
       private Icon imagen;
 
+      private SuperficieTerreno tiposuSuperficieTerreno;
+      
       public SuperficieTerreno(int numeroFila, int numeroColumna, String tipoTerreno, Icon icon, JFrame frameventana) {
             super(icon);
             this.numeroFila = numeroFila;
@@ -21,6 +23,18 @@ public class SuperficieTerreno extends JButton{
             this.frameventana = frameventana;
       }
 
+      public SuperficieTerreno(SuperficieTerreno tiposuSuperficieTerreno) {
+            this.tiposuSuperficieTerreno = tiposuSuperficieTerreno;
+      }
+
+      public SuperficieTerreno getTiposuSuperficieTerreno() {
+            return tiposuSuperficieTerreno;
+      }
+
+      public void setTiposuSuperficieTerreno(SuperficieTerreno tiposuSuperficieTerreno) {
+            this.tiposuSuperficieTerreno = tiposuSuperficieTerreno;
+      }
+      
       public JFrame getFrameventana() {
             return frameventana;
       }
@@ -28,7 +42,6 @@ public class SuperficieTerreno extends JButton{
       public void setFrameventana(JFrame frameventana) {
             this.frameventana = frameventana;
       }
-      
       
       
       public Icon getImagen() {

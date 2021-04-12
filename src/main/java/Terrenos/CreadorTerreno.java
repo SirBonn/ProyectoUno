@@ -5,13 +5,15 @@
  */
 package Terrenos;
 
+import Plantas.ManejadorPlanta;
 import TiposTerrenos.*;
+import Vivo.SerVivo;
 
 public class CreadorTerreno {
 
       public Terreno[][] crearTerrenoInicial() {
             Terreno celdaTerreno;
-            Terreno[][] SueloTerreno = new Terreno[8][8];
+            Terreno[][] SueloTerreno = new Terreno[5][5];
             PobabilidadTerreno tipo = new PobabilidadTerreno();
             ManejadorTerreno manej = new ManejadorTerreno();
             
@@ -26,13 +28,12 @@ public class CreadorTerreno {
                         nuevaSuperficieTerreno.addMouseListener(new java.awt.event.MouseAdapter() {
                               @Override
                               public void mouseClicked (java.awt.event.MouseEvent evt) {
-                                    
                                     SuperficieTerreno celdaSueloCreado = (SuperficieTerreno) evt.getComponent();
-                                     ManejadorTerreno manejadorTerreno = new ManejadorTerreno(celdaSueloCreado);
-                                     manejadorTerreno.setBotonSelec(celdaSueloCreado);
+                                    SerVivo servivo = new SerVivo((SueloTerreno[celdaSueloCreado.getNumeroColumna()][celdaSueloCreado.getNumeroFila()]).getSuperficieTerreno());
                                     System.out.println("hola soy un " + celdaSueloCreado.getTipoTerreno() + " en: (" + celdaSueloCreado.getNumeroFila() + ", "
                                            + celdaSueloCreado.getNumeroColumna()+")");
                                            // manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), );
+                                           
                                            celdaSueloCreado.getFrameventana().setVisible(true);
                                            celdaSueloCreado.getFrameventana().setLocation(evt.getXOnScreen(), evt.getYOnScreen());
                                           
