@@ -14,6 +14,8 @@ import javax.swing.ImageIcon;
 
 public class Cerdo extends Animal{
 
+      //colocar las imagenes de las etapas de su crecimiento
+
       private ImageIcon imagen0 = new ImageIcon(getClass().getClassLoader().getResource("maiz0.png"));
       private ImageIcon imagen1 = new ImageIcon(getClass().getClassLoader().getResource("maiz1.png"));
       private ImageIcon imagen2 = new ImageIcon(getClass().getClassLoader().getResource("maiz2.png"));
@@ -23,9 +25,13 @@ public class Cerdo extends Animal{
       
       public Cerdo() {
             super("Cerdo", 100, "Cerdo", 60000 , 10000);
+            //se setea un cerdo con 100 puntos de vida
+            //crecera a cada 60 segundos 
+            //su vida disminuira cada 10 segundos
       }
   
       
+      //setear las imagenes de las 4 etapas de crecimiento
       
       @Override
       public ImageIcon getImagen0() {

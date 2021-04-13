@@ -232,7 +232,7 @@ public class Mercado extends javax.swing.JPanel {
       }//GEN-LAST:event_venderButtonActionPerformed
 
       private void validarCompra() {
-            String seleccion = "Selecciona una casilla";
+            String seleccion = "";
             int cantidad = Integer.parseInt(cantidadText.getText());
             if (maizCheck.isSelected()) {
                   jugador.comprar(cantidad, inventario.getMazorca());

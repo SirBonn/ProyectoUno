@@ -248,7 +248,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void FrijolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrijolesActionPerformed
             Frijol frijol = new Frijol();
             this.serVivo = frijol;
-            inventario.getSemillaFrijol().setCantidad(inventario.getAguacate().getCantidad()-1);
+            inventario.getSemillaFrijol().setCantidad((inventario.getAguacate().getCantidad()-1));
             this.itemKillItem=inventario.getFrijol();
             tierra.sembrar(frijol, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);

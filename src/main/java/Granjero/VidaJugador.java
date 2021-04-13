@@ -56,11 +56,12 @@ public class VidaJugador extends Thread {
                         } catch (InterruptedException e) {
                               jugador.observadorVida(vidaJugadorJLabel, jugador.getVidaSer(), this);
                               hp = jugador.getVidaSer();
+                               JOptionPane.showMessageDialog(null, "Ya no puede seguir jugando");
                               interrupted();
                         }
                   }
             }
-            JOptionPane.showMessageDialog(null, "Ya no puede seguir jugando");
+           
       }
       
 }

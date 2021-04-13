@@ -91,7 +91,7 @@ public class Tierra extends TipoTerreno {
       public void obtenerRecursos(SerVivo animal, Item item) {
             if (animal.getEdadSer() == 3) {
                   JOptionPane.showMessageDialog(null,"Acabas de obtener recursos, revisa tu inventario");
-                  item.setCantidad(item.getCantidad()+5);
+                  item.setCantidad((item.getCantidad()+5));
                   animal.setVidaSer(1);
             }
             if (animal.getEdadSer() <= 2) {
