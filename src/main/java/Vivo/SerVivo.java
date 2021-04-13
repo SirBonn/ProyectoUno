@@ -25,6 +25,10 @@ public class SerVivo {
       private int edadSer;
       private int decrecimiento;
       private int crecimiento;
+      private ImageIcon imagen0;
+      private ImageIcon imagen1;
+      private ImageIcon imagen2;
+      private ImageIcon imagen3;
 
       public SerVivo(JButton botonselect) {
             this.botonselec = botonselect;
@@ -65,28 +69,46 @@ public class SerVivo {
             }
       }
 
-      public void observadorCrecimiento(int edad, planta planta,String tipo, JLabel edadJLabel, JLabel imagenEdad, Crecer crecer, Vida vida) {
+      public void observadorCrecimiento(int edad, SerVivo serVivo,String tipo, JLabel edadJLabel, JLabel imagenEdad, Crecer crecer, Vida vida) {
             if (edad == 0) {
                   imagenEdad.setVisible(true);
-                  imagenEdad.setIcon(planta.getImagen0());
+                  imagenEdad.setIcon(serVivo.getImagen0());
                   System.out.println("tu " + tipo + " aun es joven");
             }
             if (edad == 1) {
-                  imagenEdad.setIcon(planta.getImagen1());
+                  imagenEdad.setIcon(serVivo.getImagen1());
                   System.out.println("tu " + tipo + " esta creciendo");
             }
             if (edad == 2) {
-                  imagenEdad.setIcon(planta.getImagen2());
+                  imagenEdad.setIcon(serVivo.getImagen2());
                   System.out.println("tu " + tipo + " ya es adulta");
             }
             if (edad == 3) {
-                  imagenEdad.setIcon(planta.getImagen3());
+                  imagenEdad.setIcon(serVivo.getImagen3());
                   System.out.println("tu " + tipo + " murio de vejez");
                   crecer.interrupt();
                   vida.interrupt();
             }
       }
+      
+      
+      public ImageIcon getImagen0() {
+            return imagen0;
+      }
 
+      public ImageIcon getImagen1() {
+            return imagen1;
+      }
+
+      public ImageIcon getImagen2() {
+            return imagen2;
+      }
+
+      public ImageIcon getImagen3() {
+            return imagen3;
+      }
+      
+      
       public JButton getBotonselec() {
             return botonselec;
       }

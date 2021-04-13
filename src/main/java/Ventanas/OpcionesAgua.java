@@ -5,17 +5,22 @@
  */
 package Ventanas;
 
+import Terrenos.SuperficieTerreno;
+import Granjero.Jugador;
+
 /**
  *
  * @author byron
  */
 public class OpcionesAgua extends javax.swing.JFrame {
 
-      /**
-       * Creates new form OpcionesAgua
-       */
-      public OpcionesAgua() {
+     private SuperficieTerreno botonPulsado;
+     private Jugador jugador;
+     
+      public OpcionesAgua(SuperficieTerreno celdaRecibida, Jugador jugador) {
             initComponents();
+            this.botonPulsado = celdaRecibida;
+            this.jugador = jugador;
       }
 
       /**

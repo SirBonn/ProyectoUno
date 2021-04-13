@@ -1,21 +1,28 @@
 package Ventanas;
 
 import Plantas.*;
-import Plantas.ManejadorPlanta;
+import Animales.*;
 import Terrenos.*;
 import TiposTerrenos.Tierra;
+import TiposTerrenos.seteadorImagenesTerreno;
 import Vivo.SerVivo;
+import Granjero.Jugador;
 
 public class OpcionesTierra extends javax.swing.JFrame {
 
-      private SerVivo planta;
-      private ManejadorPlanta manejadorPlanta;
-      private ManejadorTerreno manejadorTerreno;
-      private  Tierra tierra;
-      
-      public OpcionesTierra() {
+      private SerVivo serVivo;
+      private Tierra tierra;
+      private Jugador jugador;
+      private SuperficieTerreno botonPulsado;
+      private seteadorImagenesTerreno imageSetter;
+
+      public OpcionesTierra(SuperficieTerreno celdaRecibida, Jugador jugador) {
             initComponents();
+            this.botonPulsado = celdaRecibida;
+            this.jugador =jugador;
+            // imageSetter = new seteadorImagenesTerreno();
             this.tierra = new Tierra(true, false);
+            //  imageSetter.maizSembrado(Maiz, botonPulsado);
             botonCosechador.setVisible(false);
             botonFertilizante.setVisible(false);
             botonLimpiador.setVisible(false);
@@ -34,12 +41,12 @@ public class OpcionesTierra extends javax.swing.JFrame {
             Maiz = new javax.swing.JMenuItem();
             Frijoles = new javax.swing.JMenuItem();
             criarPopUp = new javax.swing.JPopupMenu();
-            jMenuItem2 = new javax.swing.JMenuItem();
-            jMenuItem3 = new javax.swing.JMenuItem();
-            jMenuItem4 = new javax.swing.JMenuItem();
+            vacaAnimal = new javax.swing.JMenuItem();
+            cerdoAnimal = new javax.swing.JMenuItem();
+            gallinaAnimal = new javax.swing.JMenuItem();
             botonFertilizante = new javax.swing.JButton();
             botonCosechador = new javax.swing.JButton();
-            edadSiembra = new javax.swing.JLabel();
+            edadColocao = new javax.swing.JLabel();
             siembraLabel = new javax.swing.JLabel();
             colocarAnimales = new javax.swing.JButton();
             regresar = new javax.swing.JButton();
@@ -74,9 +81,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
             Semillas.setText("Semillas");
 
             Maiz.setText("Maiz");
-            Maiz.addMouseListener(new java.awt.event.MouseAdapter() {
-                  public void mouseClicked(java.awt.event.MouseEvent evt) {
-                        MaizMouseClicked(evt);
+            Maiz.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        MaizActionPerformed(evt);
                   }
             });
             Semillas.add(Maiz);
@@ -93,19 +100,33 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
             criarPopUp.setInvoker(colocarAnimales);
 
-            jMenuItem2.setText("jMenuItem2");
-            criarPopUp.add(jMenuItem2);
+            vacaAnimal.setText("Vaca");
+            vacaAnimal.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        vacaAnimalActionPerformed(evt);
+                  }
+            });
+            criarPopUp.add(vacaAnimal);
 
-            jMenuItem3.setText("jMenuItem3");
-            criarPopUp.add(jMenuItem3);
+            cerdoAnimal.setText("Cerdo");
+            cerdoAnimal.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        cerdoAnimalActionPerformed(evt);
+                  }
+            });
+            criarPopUp.add(cerdoAnimal);
 
-            jMenuItem4.setText("jMenuItem4");
-            criarPopUp.add(jMenuItem4);
+            gallinaAnimal.setText("Gallina");
+            gallinaAnimal.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        gallinaAnimalActionPerformed(evt);
+                  }
+            });
+            criarPopUp.add(gallinaAnimal);
 
             setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
             setAlwaysOnTop(true);
             setUndecorated(true);
-            setPreferredSize(new java.awt.Dimension(250, 250));
             setResizable(false);
             setType(java.awt.Window.Type.UTILITY);
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,9 +146,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
                   }
             });
             getContentPane().add(botonCosechador, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
-            getContentPane().add(edadSiembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 130, 30));
+            getContentPane().add(edadColocao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 130, 30));
 
-            siembraLabel.setText("Aun no siembras nada.");
+            siembraLabel.setText("Aun no esta ocupado");
             getContentPane().add(siembraLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
 
             colocarAnimales.setText("Criar");
@@ -135,11 +156,6 @@ public class OpcionesTierra extends javax.swing.JFrame {
             colocarAnimales.addMouseListener(new java.awt.event.MouseAdapter() {
                   public void mouseReleased(java.awt.event.MouseEvent evt) {
                         colocarAnimalesMouseReleased(evt);
-                  }
-            });
-            colocarAnimales.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        colocarAnimalesActionPerformed(evt);
                   }
             });
             getContentPane().add(colocarAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 80, -1));
@@ -167,7 +183,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
                         botonLimpiadorActionPerformed(evt);
                   }
             });
-            getContentPane().add(botonLimpiador, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 80, -1));
+            getContentPane().add(botonLimpiador, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 170, -1, -1));
 
             botonRegar.setText("Regar");
             botonRegar.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +191,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
                         botonRegarActionPerformed(evt);
                   }
             });
-            getContentPane().add(botonRegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 70, -1));
+            getContentPane().add(botonRegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 80, -1));
 
             imagenSiembraLabel.setBackground(new java.awt.Color(255, 255, 255, 100));
             imagenSiembraLabel.setForeground(new java.awt.Color(255, 255, 255, 100));
@@ -201,58 +217,48 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void colocarAnimalesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colocarAnimalesMouseReleased
             criarPopUp.setVisible(true);
             criarPopUp.setLocation(evt.getXOnScreen(), evt.getYOnScreen());
+            tierra.setParcela(true);
       }//GEN-LAST:event_colocarAnimalesMouseReleased
 
       private void TamarindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamarindoActionPerformed
             TamarindoArbol tamarindo = new TamarindoArbol();
-            this.planta =tamarindo;
-            tierra.sembrar(tamarindo, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            this.serVivo = tamarindo;
+            tierra.sembrar(tamarindo, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
-            colocarAnimales.setVisible(false);
-            botonCosechador.setVisible(true);
-            botonFertilizante.setVisible(true);
-            botonLimpiador.setVisible(true);
-            botonRegar.setVisible(true);
+            setBotonesPlanta();
       }//GEN-LAST:event_TamarindoActionPerformed
 
       private void AguacaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AguacaeActionPerformed
             AguacateArbol aguacate = new AguacateArbol();
-            this.planta =aguacate;
-            tierra.sembrar(aguacate, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            this.serVivo = aguacate;
+            tierra.sembrar(aguacate, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
-            colocarAnimales.setVisible(false);
-            botonCosechador.setVisible(true);
-            botonFertilizante.setVisible(true);
-            botonLimpiador.setVisible(true);
-            botonRegar.setVisible(true);
+            setBotonesPlanta();
       }//GEN-LAST:event_AguacaeActionPerformed
 
       private void FrijolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrijolesActionPerformed
             Frijol frijol = new Frijol();
-            this.planta = frijol;
-            tierra.sembrar(frijol, siembraLabel, sembrar, edadSiembra, imagenSiembraLabel);
+            this.serVivo = frijol;
+            tierra.sembrar(frijol, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
-            colocarAnimales.setVisible(false);
-            botonCosechador.setVisible(true);
-            botonFertilizante.setVisible(true);
-            botonLimpiador.setVisible(true);
-            botonRegar.setVisible(true);
+            setBotonesPlanta();
       }//GEN-LAST:event_FrijolesActionPerformed
 
-      private void MaizMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaizMouseClicked
-            
-      }//GEN-LAST:event_MaizMouseClicked
-
       private void botonFertilizanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFertilizanteActionPerformed
-            tierra.fertilizar(this.planta);
+          if (tierra.isParcela() == false) {
+            tierra.fertilizar(this.serVivo); 
+          } else {
+                tierra.obtenerRecursos(this.serVivo);
+          }
       }//GEN-LAST:event_botonFertilizanteActionPerformed
 
       private void botonLimpiadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLimpiadorActionPerformed
             this.tierra.setLibre(true);
             this.tierra.setParcela(false);
+            this.tierra.limpiar();  
             siembraLabel.setIcon(null);
-            siembraLabel.setText("Listo para sembrar");
-            edadSiembra.setVisible(false);
+            siembraLabel.setText("Listo para trabajar");
+            edadColocao.setText("");
             imagenSiembraLabel.setVisible(false);
             sembrar.setVisible(true);
             colocarAnimales.setVisible(true);
@@ -263,19 +269,73 @@ public class OpcionesTierra extends javax.swing.JFrame {
             
       }//GEN-LAST:event_botonLimpiadorActionPerformed
 
-      private void colocarAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarAnimalesActionPerformed
-            // TODO add your handling code here:
-      }//GEN-LAST:event_colocarAnimalesActionPerformed
-
       private void botonRegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegarActionPerformed
-            tierra.regar(this.planta);
+            tierra.mantenerVida(this.serVivo);
       }//GEN-LAST:event_botonRegarActionPerformed
 
       private void botonCosechadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCosechadorActionPerformed
-           tierra.cosechar(this.planta);
+            if(tierra.isParcela() == false) {
+            tierra.cosechar(this.serVivo);
+            } else {
+                  tierra.destazarAnimal(this.serVivo);
+            }
       }//GEN-LAST:event_botonCosechadorActionPerformed
 
+      private void MaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaizActionPerformed
+            Maiz maiz = new Maiz();
+            this.serVivo = maiz;
+            tierra.sembrar(maiz, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
+            this.tierra.setLibre(false);
+            setBotonesPlanta();
 
+      }//GEN-LAST:event_MaizActionPerformed
+
+      private void vacaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacaAnimalActionPerformed
+            Vaca vaca = new Vaca();
+            this.serVivo = vaca;
+            tierra.colocar(vaca, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
+            setBotonesAnimal();
+      }//GEN-LAST:event_vacaAnimalActionPerformed
+
+      private void cerdoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerdoAnimalActionPerformed
+            Cerdo cerdo = new Cerdo();
+            this.serVivo = cerdo;
+            tierra.colocar(cerdo, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
+            setBotonesAnimal();
+      }//GEN-LAST:event_cerdoAnimalActionPerformed
+
+      private void gallinaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallinaAnimalActionPerformed
+            Gallina gallina = new Gallina();
+            this.serVivo = gallina;
+            tierra.colocar(gallina, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
+            setBotonesAnimal();
+      }//GEN-LAST:event_gallinaAnimalActionPerformed
+
+      private void setBotonesPlanta() {
+            colocarAnimales.setVisible(false);
+            botonCosechador.setText("Cosechar");
+            botonCosechador.setVisible(true);
+            botonFertilizante.setText("Fertilizante");
+            botonFertilizante.setVisible(true);
+            botonRegar.setText("Regar");
+            botonRegar.setVisible(true);
+            botonLimpiador.setVisible(true);
+      }
+
+      private void setBotonesAnimal() {
+            colocarAnimales.setVisible(false);
+            botonCosechador.setText("Recolectar");
+            botonCosechador.setVisible(true);
+            botonFertilizante.setText("Destazar");
+            botonFertilizante.setVisible(true);
+            botonRegar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            botonRegar.setText("Alimentar");
+            botonRegar.setVisible(true);
+            botonLimpiador.setVisible(true);
+
+      }
+      
+      
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JMenuItem Aguacae;
       private javax.swing.JMenu Arboles;
@@ -287,17 +347,17 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private javax.swing.JButton botonFertilizante;
       private javax.swing.JButton botonLimpiador;
       private javax.swing.JButton botonRegar;
+      private javax.swing.JMenuItem cerdoAnimal;
       private javax.swing.JButton colocarAnimales;
       private javax.swing.JPopupMenu criarPopUp;
-      private javax.swing.JLabel edadSiembra;
+      private javax.swing.JLabel edadColocao;
       private javax.swing.JLabel fondotierra;
+      private javax.swing.JMenuItem gallinaAnimal;
       private javax.swing.JLabel imagenSiembraLabel;
-      private javax.swing.JMenuItem jMenuItem2;
-      private javax.swing.JMenuItem jMenuItem3;
-      private javax.swing.JMenuItem jMenuItem4;
       private javax.swing.JButton regresar;
       private javax.swing.JButton sembrar;
       private javax.swing.JPopupMenu sembrarpopup;
       private javax.swing.JLabel siembraLabel;
+      private javax.swing.JMenuItem vacaAnimal;
       // End of variables declaration//GEN-END:variables
 }

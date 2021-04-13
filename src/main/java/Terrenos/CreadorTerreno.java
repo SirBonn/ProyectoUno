@@ -5,9 +5,10 @@
  */
 package Terrenos;
 
-import Plantas.ManejadorPlanta;
+import Vivo.ManejadorSeresVivos;
 import TiposTerrenos.*;
 import Vivo.SerVivo;
+import Terrenos.*;
 
 public class CreadorTerreno {
 
@@ -16,27 +17,22 @@ public class CreadorTerreno {
             Terreno[][] SueloTerreno = new Terreno[5][5];
             PobabilidadTerreno tipo = new PobabilidadTerreno();
             ManejadorTerreno manej = new ManejadorTerreno();
-            
-            for (int x = 0; x < 5; x++) {
+
+                   
+                   for (int x = 0; x < 5; x++) {
                   for (int y = 0; y < 5; y++) {
-                        String terretipe = tipo.randomTerreno().toString();
-                        SuperficieTerreno nuevaSuperficieTerreno = new SuperficieTerreno(x, y, terretipe, tipo.getImagen(),manej.opcionesTerreno(terretipe));
-                        TipoTerreno terrenoRandom = tipo.randomTerreno();
-                        celdaTerreno = new Terreno(terrenoRandom, nuevaSuperficieTerreno);
+                        TipoTerreno terretipe = tipo.randomTerreno();
+                        SuperficieTerreno nuevaSuperficieTerreno = new SuperficieTerreno(x, y, terretipe.getNombre(), tipo.getImagen(), manej.opcionesTerreno(terretipe));
+                        celdaTerreno = new Terreno(terretipe, nuevaSuperficieTerreno);
                         SueloTerreno[x][y] = celdaTerreno;
                         
                         nuevaSuperficieTerreno.addMouseListener(new java.awt.event.MouseAdapter() {
                               @Override
                               public void mouseClicked (java.awt.event.MouseEvent evt) {
                                     SuperficieTerreno celdaSueloCreado = (SuperficieTerreno) evt.getComponent();
-                                    SerVivo servivo = new SerVivo((SueloTerreno[celdaSueloCreado.getNumeroColumna()][celdaSueloCreado.getNumeroFila()]).getSuperficieTerreno());
-                                    System.out.println("hola soy un " + celdaSueloCreado.getTipoTerreno() + " en: (" + celdaSueloCreado.getNumeroFila() + ", "
-                                           + celdaSueloCreado.getNumeroColumna()+")");
-                                           // manej.opcionesTerreno(celdaSueloCreado.getTipoTerreno(), );
-                                           
                                            celdaSueloCreado.getFrameventana().setVisible(true);
                                            celdaSueloCreado.getFrameventana().setLocation(evt.getXOnScreen(), evt.getYOnScreen());
-                                          
+                                           manej.setBotonRecibido(celdaSueloCreado);
                               }   
                         });
                   }

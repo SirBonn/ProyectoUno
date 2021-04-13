@@ -31,13 +31,13 @@ public class Vida extends Thread {
                   int hp = serVivo.getVidaSer();
                   
                   if (hp >= 0) {
+                         try {
                         hp-=1;
                         System.out.println(serVivo.getVidaSer() + " de " + serVivo.getNombre());
                         vidaJugadorJLabel.setText("" + serVivo.getVidaSer());
                         serVivo.observadorVida(vidaJugadorJLabel, serVivo.getVidaSer(), this);
                         serVivo.setVidaSer(hp + boost);
-                  
-                        try {
+                        boost = 0;
                               hp = serVivo.getVidaSer();
                               Vida.sleep(decaimiento);
                         } catch (InterruptedException e) {

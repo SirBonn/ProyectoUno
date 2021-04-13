@@ -23,10 +23,6 @@ public class SuperficieTerreno extends JButton{
             this.frameventana = frameventana;
       }
 
-      public SuperficieTerreno(SuperficieTerreno tiposuSuperficieTerreno) {
-            this.tiposuSuperficieTerreno = tiposuSuperficieTerreno;
-      }
-
       public SuperficieTerreno getTiposuSuperficieTerreno() {
             return tiposuSuperficieTerreno;
       }
@@ -47,6 +43,7 @@ public class SuperficieTerreno extends JButton{
       public Icon getImagen() {
             return imagen;
       }
+      
       
       public void setImagen(Icon imagen) {
             this.imagen = imagen;

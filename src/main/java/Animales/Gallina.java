@@ -1,22 +1,22 @@
 
-package Plantas;
+package Animales;
 import Vivo.*;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Maiz extends planta {
-
-      private ImageIcon imagen0 = new ImageIcon(getClass().getClassLoader().getResource("maiz0.png"));
+/**
+ *
+ * @author byron
+ */
+public class Gallina extends Animal {
+       private ImageIcon imagen0 = new ImageIcon(getClass().getClassLoader().getResource("maiz0.png"));
       private ImageIcon imagen1 = new ImageIcon(getClass().getClassLoader().getResource("maiz1.png"));
       private ImageIcon imagen2 = new ImageIcon(getClass().getClassLoader().getResource("maiz2.png"));
       private ImageIcon imagen3 = new ImageIcon(getClass().getClassLoader().getResource("maiz3.png"));
       
       
-      public Maiz () {
-            super("maiz", 100, "maiz", 60000 , 2000);
+      public Gallina () {
+            super("Gallina", 100, "Gallina", 60000 , 8000);
       }
-  
-      
       
       @Override
       public ImageIcon getImagen0() {
@@ -56,5 +56,4 @@ public class Maiz extends planta {
       public void setImagen3(ImageIcon imagen3) {
             this.imagen3 = imagen3;
       }
-      
 }

@@ -14,10 +14,11 @@ public class Agua extends TipoTerreno {
       private int cantidadPescados;
 
       public Agua(boolean ocupado, int cantidadPescados) {
+            super("Agua");
             this.ocupado = ocupado;
             this.cantidadPescados = cantidadPescados;
       }
-//colocamos la textura de agua y la laojamos 
+      //colocamos la textura de agua y la laojamos 
       ImageIcon imagen = new ImageIcon(getClass().getClassLoader().getResource("texturaAgua.jpg"));
 
       @Override

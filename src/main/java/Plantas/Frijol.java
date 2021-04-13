@@ -12,7 +12,6 @@ public class Frijol extends planta {
       
       public Frijol () {
             super("Frijol", 100, "Frijol", 60000 , 3000);
-            //planta tipo maiz, con 100 de vida, de nombre maiz, que a cada 60 seg crece 1nivel y cada 9 segundos pierde 1 de vida--
       }
       
       @Override

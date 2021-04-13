@@ -1,65 +1,106 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package TiposTerrenos;
 
-import Plantas.ManejadorPlanta;
+import Vivo.ManejadorSeresVivos;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Vivo.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+public class Tierra extends TipoTerreno {
 
-public class Tierra extends TipoTerreno{
-      
       private boolean libre;
       private boolean parcela;
-      private ManejadorPlanta sembrador;
-      private  SerVivo serVivo;
+      private ManejadorSeresVivos granjero;
+      private SerVivo serVivo;
       ImageIcon imagen = new ImageIcon(getClass().getClassLoader().getResource("texturaTierra.jpg"));
-      
+
       public Tierra(boolean libre, boolean parcela) {
+            super("Tierra");
             this.libre = libre;
             this.parcela = parcela;
       }
-     
-      public void sembrar (planta planta, JLabel vidaJLabel, JButton botonsiembra, JLabel edadJLabel, JLabel imagenEdad){
+
+      public void sembrar(planta planta, JLabel vidaJLabel, JButton botonsiembra, JLabel edadJLabel, JLabel imagenEdad) {
             this.serVivo = planta;
-            if (libre == true && parcela == false){
-                 sembrador  = new ManejadorPlanta(planta);
-                 sembrador.sembrar(vidaJLabel, planta, edadJLabel, imagenEdad);
-                 botonsiembra.setVisible(false);
-            } 
-            else {
+            if (libre == true && parcela == false) {
+                  granjero = new ManejadorSeresVivos(planta);
+                  granjero.sembrar(vidaJLabel, planta, edadJLabel, imagenEdad);
+                  botonsiembra.setVisible(false);
+            } else {
                   System.out.println("este lugar esta ocupado o es una parcela");
             }
-            
+
       }
-      
-      public void regar (SerVivo planta){
-            if(serVivo.getVidaSer()<75) {
-                  sembrador.regar(25);
+
+      public void colocar(Animal animal, JLabel vidaJLabel, JButton colcarAnimal, JLabel edJLabel, JLabel imagenEdad) {
+            this.serVivo = animal;
+            if (libre == true && parcela == true) {
+                  granjero = new ManejadorSeresVivos(animal);
+                  granjero.colocar(vidaJLabel, animal, edJLabel, imagenEdad);
+                  colcarAnimal.setVisible(false);
+            } else {
+                  System.out.println("este lugar esta ocupado o es una parcela");
+            }
+      }
+
+      public void mantenerVida(SerVivo planta) {
+            if (serVivo.getVidaSer() < 75) {
+                  granjero.regarOalimentar(25);
             } else {
                   System.out.println("aun tiene agua, vuelve en un momento");
             }
       }
-      
-      public void fertilizar (SerVivo planta){
-            sembrador.regar(1);
+
+      public void fertilizar(SerVivo planta) {
+            granjero.Fertilizar(1);
       }
-      
-      public void cosechar(SerVivo planta){
+
+      public void cosechar(SerVivo planta) {
             if (planta.getEdadSer() == 3) {
                   System.out.println("acabas de cosechar, has recibido 2 mazorcas");
-            } if (planta.getEdadSer() <= 2) {
+                  granjero.getCrecer().interrupt();
+                  granjero.getVida().interrupt();
+            }
+            if (planta.getEdadSer() <= 2) {
                   System.out.println("espera un poco mas, la cosecha casi esta lista");
-            } else if (planta.getEdadSer() == 4){
+
+            } else if (planta.getEdadSer() == 4) {
                   System.out.println("oh esta muerta, te recomiendo limpiar el terreno");
             }
-            
+      }
+
+      public void destazarAnimal(SerVivo animal) {
+            if (animal.getEdadSer() == 3) {
+                  System.out.println("acabas de matar a la vaca");
+                  granjero.getCrecer().interrupt();
+                  granjero.getVida().interrupt();
+            }
+            if (animal.getEdadSer() <= 2) {
+                  System.out.println("espera un poco mas, la cosecha casi esta lista");
+
+            } else if (animal.getEdadSer() == 4) {
+                  System.out.println("oh esta muerta, te recomiendo limpiar la parcela");
+            }
+      }
+
+      public void obtenerRecursos(SerVivo animal) {
+            if (animal.getEdadSer() == 3) {
+                  System.out.println("acabas de ordeñar a la vaca");
+                  animal.setVidaSer(2);
+
+            }
+            if (animal.getEdadSer() <= 2) {
+                  System.out.println("espera un poco mas, la cosecha casi esta lista");
+
+            } else if (animal.getEdadSer() == 4) {
+                  System.out.println("oh esta muerta, te recomiendo limpiar la parcela");
+            }
+      }
+
+      public void limpiar(){
+            granjero.getCrecer().interrupt();
+            granjero.getVida().interrupt();
       }
       
       @Override
@@ -71,10 +112,6 @@ public class Tierra extends TipoTerreno{
             return imagen;
       }
 
-      public void sembrar (){
-            System.out.println("usted esta sembrando");
-      }
-      
       public boolean isLibre() {
             return libre;
       }
@@ -90,6 +127,5 @@ public class Tierra extends TipoTerreno{
       public void setParcela(boolean parcela) {
             this.parcela = parcela;
       }
-      
-      
+
 }

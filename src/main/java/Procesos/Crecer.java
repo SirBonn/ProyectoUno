@@ -16,13 +16,13 @@ public class Crecer extends Thread {
       private int increment;
       private Vida vida;
 
-      public Crecer(int velocidadcrecimiento, planta planta, SerVivo serVivo, JLabel edadJLabel, JLabel imagenEdad, Vida vida) {
+      public Crecer(int velocidadcrecimiento, SerVivo serVivo1, SerVivo serVivo, JLabel edadJLabel, JLabel imagenEdad, Vida vida) {
             this.velocidadcrecimiento = velocidadcrecimiento;
             this.serVivo = serVivo;
             this.edadJLabel = edadJLabel;
             this.imagenEdad = imagenEdad;
             this.vida = vida;
-            this.planta =  planta;
+            this.serVivo =  serVivo;
       }
 
       public void incrementoedad(int increment) {
@@ -32,12 +32,13 @@ public class Crecer extends Thread {
 
       @Override
       public void run() {
+            
             while (!interrupted()) {
-
+                  
                   int edad = serVivo.getEdadSer();
                   for (int i = edad+1; i < 5; i++) {
 
-                        serVivo.observadorCrecimiento(serVivo.getEdadSer(), planta, serVivo.getNombre(), edadJLabel, imagenEdad, this, vida);
+                        serVivo.observadorCrecimiento(serVivo.getEdadSer(), serVivo, serVivo.getNombre(), edadJLabel, imagenEdad, this, vida);
                         try {
                               
                               serVivo.setEdadSer((i) + increment);
@@ -47,7 +48,7 @@ public class Crecer extends Thread {
                               serVivo.setVidaSer(0);
                               interrupted();
                               vida.isInterrupted();
-                        }
+                        }     
                   }
             } 
             System.out.println("tu planta murio");

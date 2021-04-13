@@ -1,10 +1,18 @@
-
-package Plantas;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Animales;
 import Vivo.*;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class Maiz extends planta {
+/**
+ *
+ * @author byron
+ */
+
+public class Cerdo extends Animal{
 
       private ImageIcon imagen0 = new ImageIcon(getClass().getClassLoader().getResource("maiz0.png"));
       private ImageIcon imagen1 = new ImageIcon(getClass().getClassLoader().getResource("maiz1.png"));
@@ -12,8 +20,9 @@ public class Maiz extends planta {
       private ImageIcon imagen3 = new ImageIcon(getClass().getClassLoader().getResource("maiz3.png"));
       
       
-      public Maiz () {
-            super("maiz", 100, "maiz", 60000 , 2000);
+      
+      public Cerdo() {
+            super("Cerdo", 100, "Cerdo", 60000 , 10000);
       }
   
       

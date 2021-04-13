@@ -11,6 +11,7 @@ public class PobabilidadTerreno {
       private Agua agua;
       private Icon imagen;
       
+      
       public TipoTerreno randomTerreno() {
             Random probabilidad = new Random();
             int prob = probabilidad.nextInt(100) + 1;

@@ -17,6 +17,7 @@ public class Desierto extends TipoTerreno {
       private String lamento;
       
       public Desierto() {
+            super("Desierto");
 
       }
 

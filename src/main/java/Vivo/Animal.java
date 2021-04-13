@@ -1,10 +1,11 @@
+
 package Vivo;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class planta extends SerVivo {
-
+public class Animal extends SerVivo{
+      
       private String tipo;
       private JLabel labelvidainfo;
       private ImageIcon imagen0;
@@ -12,7 +13,7 @@ public class planta extends SerVivo {
       private ImageIcon imagen2;
       private ImageIcon imagen3;
 
-      public planta(String tipo, int Vida, String nombre, int crecimiento, int decrecimiento) {
+      public Animal(String tipo, int Vida, String nombre, int crecimiento, int decrecimiento) {
             super(Vida, nombre, crecimiento, decrecimiento);
             this.tipo = tipo;
       }
