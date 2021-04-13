@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="undecorated" type="boolean" value="true"/>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -24,13 +33,221 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="310" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="cerrar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="sTamarindoCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sAgucateCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sFrijolCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sMaizCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tamarindoCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="aguacateCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="frijolCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="maizCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lecheCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="huevosCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cPolloCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cCerditoCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cResCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="becerrosCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cerditosCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pollitosCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="compraBoton" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="58" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cantidadText" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" pref="135" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="maizCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="frijolCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="aguacateCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tamarindoCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sMaizCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sFrijolCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sAgucateCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sTamarindoCheck" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pollitosCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cerditosCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="becerrosCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cResCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cCerditoCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cPolloCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="huevosCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lecheCheck" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cantidadText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="compraBoton" alignment="3" min="-2" pref="135" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" pref="135" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cerrar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="compraBoton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="COMPRAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compraBotonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="cerrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="VENDER"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="maizCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Maiz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="frijolCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Frijol"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="aguacateCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aguacate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="tamarindoCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tamarindo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="sMaizCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semilla de maiz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="sFrijolCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semilla de Frijol"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="sAgucateCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reto&#xf1;o de aguacate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="sTamarindoCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reto&#xf1;o de Tamarindo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="lecheCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Leche"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="pollitosCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pollitos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cerditosCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerditos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="becerrosCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Becerros"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cResCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de res"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cCerditoCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de cerdo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cPolloCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de Pollo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="huevosCheck">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Huevos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cantidadText">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cantidad:"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

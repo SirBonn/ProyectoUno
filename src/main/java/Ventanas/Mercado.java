@@ -5,17 +5,25 @@
  */
 package Ventanas;
 
+import Granjero.*;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author byron
  */
-public class Mercado extends javax.swing.JFrame {
+public class Mercado extends javax.swing.JPanel {
 
-      /**
-       * Creates new form Mercado
-       */
-      public Mercado() {
+      private JPanel panelSeteado;
+      private Jugador jugador;
+      private Inventario inventario;
+
+      public Mercado(JPanel jpanel, Jugador jugador, Inventario inventario) {
             initComponents();
+            this.panelSeteado = jpanel;
+            this.jugador = jugador;
+            this.inventario = inventario;
       }
 
       /**
@@ -26,25 +34,299 @@ public class Mercado extends javax.swing.JFrame {
       // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
       private void initComponents() {
 
-            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-            setUndecorated(true);
+            jPanel1 = new javax.swing.JPanel();
+            compraBoton = new javax.swing.JButton();
+            cerrar = new javax.swing.JButton();
+            jButton2 = new javax.swing.JButton();
+            maizCheck = new javax.swing.JCheckBox();
+            frijolCheck = new javax.swing.JCheckBox();
+            aguacateCheck = new javax.swing.JCheckBox();
+            tamarindoCheck = new javax.swing.JCheckBox();
+            sMaizCheck = new javax.swing.JCheckBox();
+            sFrijolCheck = new javax.swing.JCheckBox();
+            sAgucateCheck = new javax.swing.JCheckBox();
+            sTamarindoCheck = new javax.swing.JCheckBox();
+            lecheCheck = new javax.swing.JCheckBox();
+            pollitosCheck = new javax.swing.JCheckBox();
+            cerditosCheck = new javax.swing.JCheckBox();
+            becerrosCheck = new javax.swing.JCheckBox();
+            cResCheck = new javax.swing.JCheckBox();
+            cCerditoCheck = new javax.swing.JCheckBox();
+            cPolloCheck = new javax.swing.JCheckBox();
+            huevosCheck = new javax.swing.JCheckBox();
+            cantidadText = new javax.swing.JTextField();
+            jLabel1 = new javax.swing.JLabel();
 
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                  jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGap(0, 100, Short.MAX_VALUE)
+            );
+            jPanel1Layout.setVerticalGroup(
+                  jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGap(0, 100, Short.MAX_VALUE)
+            );
+
+            compraBoton.setText("COMPRAR");
+            compraBoton.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        compraBotonActionPerformed(evt);
+                  }
+            });
+
+            cerrar.setText("Cerrar");
+            cerrar.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        cerrarActionPerformed(evt);
+                  }
+            });
+
+            jButton2.setText("VENDER");
+            jButton2.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        jButton2ActionPerformed(evt);
+                  }
+            });
+
+            maizCheck.setText("Maiz");
+
+            frijolCheck.setText("Frijol");
+
+            aguacateCheck.setText("Aguacate");
+
+            tamarindoCheck.setText("Tamarindo");
+
+            sMaizCheck.setText("Semilla de maiz");
+
+            sFrijolCheck.setText("Semilla de Frijol");
+
+            sAgucateCheck.setText("Retoño de aguacate");
+
+            sTamarindoCheck.setText("Retoño de Tamarindo");
+
+            lecheCheck.setText("Leche");
+
+            pollitosCheck.setText("Pollitos");
+
+            cerditosCheck.setText("Cerditos");
+
+            becerrosCheck.setText("Becerros");
+
+            cResCheck.setText("Carne de res");
+
+            cCerditoCheck.setText("Carne de cerdo");
+
+            cPolloCheck.setText("Carne de Pollo");
+
+            huevosCheck.setText("Huevos");
+
+            jLabel1.setText("Cantidad:");
+
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+            this.setLayout(layout);
             layout.setHorizontalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 310, Short.MAX_VALUE)
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cerrar)
+                        .addContainerGap())
+                  .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addComponent(sTamarindoCheck)
+                                          .addComponent(sAgucateCheck)
+                                          .addComponent(sFrijolCheck)
+                                          .addComponent(sMaizCheck)
+                                          .addComponent(tamarindoCheck)
+                                          .addComponent(aguacateCheck)
+                                          .addComponent(frijolCheck)
+                                          .addComponent(maizCheck))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addComponent(lecheCheck)
+                                          .addComponent(huevosCheck)
+                                          .addComponent(cPolloCheck)
+                                          .addComponent(cCerditoCheck)
+                                          .addComponent(cResCheck)
+                                          .addComponent(becerrosCheck)
+                                          .addComponent(cerditosCheck)
+                                          .addComponent(pollitosCheck)))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                          .addComponent(compraBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                          .addComponent(cantidadText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(16, Short.MAX_VALUE))
             );
             layout.setVerticalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 520, Short.MAX_VALUE)
+                  .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(maizCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(frijolCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(aguacateCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tamarindoCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(sMaizCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(sFrijolCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(sAgucateCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(sTamarindoCheck))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(pollitosCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cerditosCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(becerrosCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cResCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cCerditoCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cPolloCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(huevosCheck)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lecheCheck)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(cantidadText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(compraBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cerrar)
+                        .addContainerGap())
             );
-
-            pack();
       }// </editor-fold>//GEN-END:initComponents
 
+      private void compraBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraBotonActionPerformed
+            this.jugador.setMonedas(jugador.getMonedas() - 5);
+            validarVenta();
+      }//GEN-LAST:event_compraBotonActionPerformed
 
+      private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+            panelSeteado.setVisible(false);
+      }//GEN-LAST:event_cerrarActionPerformed
+
+      private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+
+      }//GEN-LAST:event_jButton2ActionPerformed
+
+      private void validarVenta() {
+            String seleccion = "";
+            int cantidad = Integer.parseInt(cantidadText.getText());
+            if (maizCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getMazorca());
+                  seleccion += "Compro " + cantidadText.getText() + "Mazorcas";
+            }
+            if (frijolCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getFrijol());
+                  seleccion += "Compro " + cantidadText.getText() + "Frijoles";
+            }
+            if (aguacateCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getAguacate());
+                  seleccion += "Compro " + cantidadText.getText() + "aguacates";
+            }
+            if (tamarindoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getTamarindo());
+                  seleccion += "Compro " + cantidadText.getText() + "tamarindo";
+            }
+            if (sMaizCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaMaiz());
+                  seleccion += "Compro " + cantidadText.getText() + "Semillas de Maiz";
+            }
+            if (sFrijolCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaFrijol());
+                  seleccion += "Compro " + cantidadText.getText() + "Semillas de frijol";
+            }
+            if (sAgucateCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaAgua());
+                  seleccion += "Compro " + cantidadText.getText() + "retoños de aguacate";
+            }
+            if (sTamarindoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaTamarindo());
+                  seleccion += "Compro " + cantidadText.getText() + "Retoños de tamarindo";
+            }
+            if (pollitosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getPollito());
+                  seleccion += "Compro " + cantidadText.getText() + "Pollitos";
+            }
+            if (cerditosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCerdo());
+                  seleccion += "Compro " + cantidadText.getText() + "cerditos";
+            }
+            if (becerrosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getBecerro());
+                  seleccion += "Compro " + cantidadText.getText() + "Becerros";
+            }
+            if (cResCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarneRes());
+                  seleccion += "Compro " + cantidadText.getText() + "Filetes de res";
+            }
+            if (cCerditoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarneCerdo());
+                  seleccion += "Compro " + cantidadText.getText() + "Costillas de cerdo";
+            }
+            if (cPolloCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarnePollo());
+                  seleccion += "Compro " + cantidadText.getText() + "Pechuguitas de pollo";
+            }
+            if (huevosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getHuevo());
+                  seleccion += "Compro " + cantidadText.getText() + "Huevos";
+            }
+            if (lecheCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getLeche());
+                  seleccion += "Compro " + cantidadText.getText() + "Litros de leche";
+            } else {
+                  seleccion += "Seleccione una casilla para comprar";
+            }
+            JOptionPane.showMessageDialog(null, seleccion);
+      }
+
+      private void validarCompra() {
+
+      }
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
+      private javax.swing.JCheckBox aguacateCheck;
+      private javax.swing.JCheckBox becerrosCheck;
+      private javax.swing.JCheckBox cCerditoCheck;
+      private javax.swing.JCheckBox cPolloCheck;
+      private javax.swing.JCheckBox cResCheck;
+      private javax.swing.JTextField cantidadText;
+      private javax.swing.JCheckBox cerditosCheck;
+      private javax.swing.JButton cerrar;
+      private javax.swing.JButton compraBoton;
+      private javax.swing.JCheckBox frijolCheck;
+      private javax.swing.JCheckBox huevosCheck;
+      private javax.swing.JButton jButton2;
+      private javax.swing.JLabel jLabel1;
+      private javax.swing.JPanel jPanel1;
+      private javax.swing.JCheckBox lecheCheck;
+      private javax.swing.JCheckBox maizCheck;
+      private javax.swing.JCheckBox pollitosCheck;
+      private javax.swing.JCheckBox sAgucateCheck;
+      private javax.swing.JCheckBox sFrijolCheck;
+      private javax.swing.JCheckBox sMaizCheck;
+      private javax.swing.JCheckBox sTamarindoCheck;
+      private javax.swing.JCheckBox tamarindoCheck;
       // End of variables declaration//GEN-END:variables
 }

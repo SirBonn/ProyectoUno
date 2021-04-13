@@ -1,6 +1,7 @@
 package Granjero;
 
 import Vivo.SerVivo;
+import Items.*;
 
 public class Jugador extends  SerVivo{
 
@@ -14,8 +15,11 @@ public class Jugador extends  SerVivo{
             this.nick = nick;
             this.monedas = monedas;
       }
-
-
+      
+      public void comprar(int cantidad, Item item){
+            item.setCantidad(item.getCantidad()+cantidad);
+      }
+      
     public String getNombrevivo() {
         return nombrevivo;
     }

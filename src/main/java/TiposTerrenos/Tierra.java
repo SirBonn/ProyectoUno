@@ -87,7 +87,7 @@ public class Tierra extends TipoTerreno {
       public void obtenerRecursos(SerVivo animal) {
             if (animal.getEdadSer() == 3) {
                   System.out.println("acabas de ordeñar a la vaca");
-                  animal.setVidaSer(2);
+                  animal.setVidaSer(1);
 
             }
             if (animal.getEdadSer() <= 2) {
@@ -98,9 +98,11 @@ public class Tierra extends TipoTerreno {
             }
       }
 
-      public void limpiar(){
+      public void limpiar(JLabel siembraLabel, JLabel edadColocao){
             granjero.getCrecer().interrupt();
             granjero.getVida().interrupt();
+            siembraLabel.setText("Listo para trabajar");
+            edadColocao.setText("");
       }
       
       @Override

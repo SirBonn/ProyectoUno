@@ -41,7 +41,7 @@ public class SerVivo {
             this.decrecimiento = decrecimiento;
       }
 
-      public void observadorVida(JLabel etiqueta, int vida, Vida vidaHilo) {
+      public void observadorVida(JLabel etiqueta, int vida, Thread vidaHilo) {
             if (vida > 75) {
                   imagennueva = new ImageIcon(getClass().getClassLoader().getResource("Corazon.png"));
                   etiqueta.setIcon(imagennueva);

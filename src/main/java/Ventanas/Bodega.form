@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="undecorated" type="boolean" value="true"/>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -24,13 +16,197 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="310" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="247" max="32767" attributes="0"/>
+              <Component id="cerrarBoton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pollitosLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="semillaMaizLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lecheLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="maizLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="semillaTamarindoLabel" min="-2" pref="130" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tamarindoLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="semillaAgucateLabel" min="-2" pref="124" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="semillaFrijolLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="frijolLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="huevosLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="carneResLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cerditosLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="carneCerditosLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="carnePolloLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="aguacateLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="becerrosLabel" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="aguacateLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="becerrosLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="carneCerditosLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="carnePolloLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="carneResLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="cerditosLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="frijolLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="huevosLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="semillaAgucateLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="semillaFrijolLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="semillaTamarindoLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="tamarindoLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lecheLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="maizLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="pollitosLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="semillaMaizLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <Component id="cerrarBoton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="cerrarBoton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarBotonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="aguacateLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Maiz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="becerrosLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Becerros"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="carneCerditosLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de Cerdo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="carnePolloLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de Pollo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="carneResLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Carne de Res"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="cerditosLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerditos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="frijolLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Frijol"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="huevosLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Huevos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lecheLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Leche"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="maizLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Maiz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pollitosLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pollitos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="semillaAgucateLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semillas de aguacate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="semillaMaizLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semillas de Maiz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="semillaFrijolLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semillas de Frijol"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="semillaTamarindoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Semillas de tamarindo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="tamarindoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tamarindo"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

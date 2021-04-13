@@ -255,10 +255,8 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void botonLimpiadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLimpiadorActionPerformed
             this.tierra.setLibre(true);
             this.tierra.setParcela(false);
-            this.tierra.limpiar();  
+            this.tierra.limpiar(siembraLabel, edadColocao);  
             siembraLabel.setIcon(null);
-            siembraLabel.setText("Listo para trabajar");
-            edadColocao.setText("");
             imagenSiembraLabel.setVisible(false);
             sembrar.setVisible(true);
             colocarAnimales.setVisible(true);

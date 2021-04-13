@@ -5,17 +5,26 @@
  */
 package Ventanas;
 
+import Granjero.Inventario;
+import javax.swing.JPanel;
+import Granjero.Jugador;
+
 /**
  *
  * @author byron
  */
-public class Bodega extends javax.swing.JFrame {
+public class Bodega extends javax.swing.JPanel {
 
-      /**
-       * Creates new form Bodega
-       */
-      public Bodega() {
+      private Jugador jugador;
+      private JPanel bodegaPanel;
+      private Inventario inventario;
+
+      public Bodega(JPanel bodegaPanel, Jugador jugador, Inventario inventario) {
             initComponents();
+            this.bodegaPanel = bodegaPanel;
+            this.jugador = jugador;
+            this.inventario = inventario;
+            setLabels();
       }
 
       /**
@@ -26,28 +35,190 @@ public class Bodega extends javax.swing.JFrame {
       // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
       private void initComponents() {
 
-            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-            setUndecorated(true);
+            cerrarBoton = new javax.swing.JButton();
+            aguacateLabel = new javax.swing.JLabel();
+            becerrosLabel = new javax.swing.JLabel();
+            carneCerditosLabel = new javax.swing.JLabel();
+            carnePolloLabel = new javax.swing.JLabel();
+            carneResLabel = new javax.swing.JLabel();
+            cerditosLabel = new javax.swing.JLabel();
+            frijolLabel = new javax.swing.JLabel();
+            huevosLabel = new javax.swing.JLabel();
+            lecheLabel = new javax.swing.JLabel();
+            maizLabel = new javax.swing.JLabel();
+            pollitosLabel = new javax.swing.JLabel();
+            semillaAgucateLabel = new javax.swing.JLabel();
+            semillaMaizLabel = new javax.swing.JLabel();
+            semillaFrijolLabel = new javax.swing.JLabel();
+            semillaTamarindoLabel = new javax.swing.JLabel();
+            tamarindoLabel = new javax.swing.JLabel();
 
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
+            cerrarBoton.setText("Cerrar");
+            cerrarBoton.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        cerrarBotonActionPerformed(evt);
+                  }
+            });
+
+            aguacateLabel.setText("Maiz");
+
+            becerrosLabel.setText("Becerros");
+
+            carneCerditosLabel.setText("Carne de Cerdo");
+
+            carnePolloLabel.setText("Carne de Pollo");
+
+            carneResLabel.setText("Carne de Res");
+
+            cerditosLabel.setText("Cerditos");
+
+            frijolLabel.setText("Frijol");
+
+            huevosLabel.setText("Huevos");
+
+            lecheLabel.setText("Leche");
+
+            maizLabel.setText("Maiz");
+
+            pollitosLabel.setText("Pollitos");
+
+            semillaAgucateLabel.setText("Semillas de aguacate");
+
+            semillaMaizLabel.setText("Semillas de Maiz");
+
+            semillaFrijolLabel.setText("Semillas de Frijol");
+
+            semillaTamarindoLabel.setText("Semillas de tamarindo");
+
+            tamarindoLabel.setText("Tamarindo");
+
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+            this.setLayout(layout);
             layout.setHorizontalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 310, Short.MAX_VALUE)
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(247, Short.MAX_VALUE)
+                        .addComponent(cerrarBoton)
+                        .addContainerGap())
+                  .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(pollitosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(semillaMaizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lecheLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(maizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(semillaTamarindoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tamarindoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(semillaAgucateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(semillaFrijolLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(frijolLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(huevosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(carneResLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cerditosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(carneCerditosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(carnePolloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGroup(layout.createSequentialGroup()
+                                    .addComponent(aguacateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(becerrosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             layout.setVerticalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 520, Short.MAX_VALUE)
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(81, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(aguacateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(becerrosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(carneCerditosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(carnePolloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(carneResLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(cerditosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(frijolLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(huevosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(semillaAgucateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(semillaFrijolLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(semillaTamarindoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(tamarindoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(lecheLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(maizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                              .addComponent(pollitosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addComponent(semillaMaizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63)
+                        .addComponent(cerrarBoton)
+                        .addContainerGap())
             );
-
-            pack();
       }// </editor-fold>//GEN-END:initComponents
 
-      /**
-       * @param args the command line arguments
-       */
+      private void cerrarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarBotonActionPerformed
+            bodegaPanel.setVisible(false);
+      }//GEN-LAST:event_cerrarBotonActionPerformed
+
+      private void setLabels() {
+            this.inventario.setLabelaguacate(aguacateLabel);
+            this.inventario.setLabelbecerros(becerrosLabel);
+            this.inventario.setLabelcCerdito(carneCerditosLabel);
+            this.inventario.setLabelcPollo(carnePolloLabel);
+            this.inventario.setLabelcRes(carneResLabel);
+            this.inventario.setLabelcerditos(cerditosLabel);
+            this.inventario.setLabelfrijol(frijolLabel);
+            this.inventario.setLabelhuevos(huevosLabel);
+            this.inventario.setLabelleche(lecheLabel);
+            this.inventario.setLabelmaiz(maizLabel);
+            this.inventario.setLabelpollitos(pollitosLabel);
+            this.inventario.setLabelsAgucate(semillaAgucateLabel);
+            this.inventario.setLabelsMaiz(semillaMaizLabel);
+            this.inventario.setLabelsFrijol(semillaFrijolLabel);
+            this.inventario.setLabelsTamarindo(semillaTamarindoLabel);
+            this.inventario.setLabeltamarindoC(tamarindoLabel);
+      }
 
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
+      private javax.swing.JLabel aguacateLabel;
+      private javax.swing.JLabel becerrosLabel;
+      private javax.swing.JLabel carneCerditosLabel;
+      private javax.swing.JLabel carnePolloLabel;
+      private javax.swing.JLabel carneResLabel;
+      private javax.swing.JLabel cerditosLabel;
+      private javax.swing.JButton cerrarBoton;
+      private javax.swing.JLabel frijolLabel;
+      private javax.swing.JLabel huevosLabel;
+      private javax.swing.JLabel lecheLabel;
+      private javax.swing.JLabel maizLabel;
+      private javax.swing.JLabel pollitosLabel;
+      private javax.swing.JLabel semillaAgucateLabel;
+      private javax.swing.JLabel semillaFrijolLabel;
+      private javax.swing.JLabel semillaMaizLabel;
+      private javax.swing.JLabel semillaTamarindoLabel;
+      private javax.swing.JLabel tamarindoLabel;
       // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,6 @@ package Ventanas;
 
 import Terrenos.*;
 import Granjero.*;
-import Ventanas.*;
 
 public class JuegoPrincipal extends javax.swing.JFrame {
 
@@ -15,20 +14,26 @@ public class JuegoPrincipal extends javax.swing.JFrame {
       private final ManejadorTerreno manejadorTerreno;
       private final ManejadorJugador manejadorJugador;
       private final Granja granja;
-      private Bodega bodega;
-      private Mercado mercado;
+      private Bodega bodegaPanel;
+      private Mercado mercadoPanel;
+      private Inventario inventario;
 
       public JuegoPrincipal(Jugador jugador) {
             initComponents();
             setLocationRelativeTo(null);
             this.jugador = jugador;
             this.granja = new Granja();
-            this.manejadorJugador = new ManejadorJugador(jugador);
+            this.inventario = new Inventario();
+            this.manejadorJugador = new ManejadorJugador(jugador, this.inventario);
             this.manejadorTerreno = new ManejadorTerreno(panelTerreno, granja.getSuelo(), jugador);
-            this.bodega = new Bodega();
-            this.mercado = new Mercado();
+            this.bodegaPanel = new Bodega(panelBodega, this.jugador, this.inventario);
+            this.mercadoPanel = new Mercado(panelMercado, this.jugador, this.inventario);
+            panelMercado.setVisible(false);
+            panelMercado.add( mercadoPanel);
+            panelBodega.setVisible(false);
+            panelBodega.add(bodegaPanel);
             manejadorJugador.mostarDatos(monedasJugador, nombreJugador);
-            manejadorJugador.VidaJugador(vidaJugador);
+            manejadorJugador.VidaJugador(vidaJugador, monedasJugador);
       }
 
       @SuppressWarnings("unchecked")
@@ -37,6 +42,8 @@ public class JuegoPrincipal extends javax.swing.JFrame {
 
             bodegaBoton = new javax.swing.JButton();
             mercadoBoton = new javax.swing.JButton();
+            panelBodega = new javax.swing.JPanel();
+            panelMercado = new javax.swing.JPanel();
             panelTerreno = new javax.swing.JPanel();
             infoJugador = new javax.swing.JPanel();
             nombreJugador = new javax.swing.JLabel();
@@ -49,20 +56,22 @@ public class JuegoPrincipal extends javax.swing.JFrame {
             getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             bodegaBoton.setText("Bodega");
-            bodegaBoton.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        bodegaBotonActionPerformed(evt);
+            bodegaBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+                  public void mouseReleased(java.awt.event.MouseEvent evt) {
+                        bodegaBotonMouseReleased(evt);
                   }
             });
             getContentPane().add(bodegaBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 50, 80, -1));
 
             mercadoBoton.setText("Mercado");
-            mercadoBoton.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        mercadoBotonActionPerformed(evt);
+            mercadoBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+                  public void mouseReleased(java.awt.event.MouseEvent evt) {
+                        mercadoBotonMouseReleased(evt);
                   }
             });
             getContentPane().add(mercadoBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, -1, -1));
+            getContentPane().add(panelBodega, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, 320, 500));
+            getContentPane().add(panelMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, 320, 500));
 
             panelTerreno.setBackground(new java.awt.Color(128, 80, 6,100));
             panelTerreno.setLayout(new java.awt.GridLayout(5, 5));
@@ -91,13 +100,13 @@ public class JuegoPrincipal extends javax.swing.JFrame {
             pack();
       }// </editor-fold>//GEN-END:initComponents
 
-      private void mercadoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mercadoBotonActionPerformed
+      private void mercadoBotonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mercadoBotonMouseReleased
+            panelMercado.setVisible(true);
+      }//GEN-LAST:event_mercadoBotonMouseReleased
 
-      }//GEN-LAST:event_mercadoBotonActionPerformed
-
-      private void bodegaBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bodegaBotonActionPerformed
-            bodega.setVisible(true);
-      }//GEN-LAST:event_bodegaBotonActionPerformed
+      private void bodegaBotonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bodegaBotonMouseReleased
+      panelBodega.setVisible(true);
+      }//GEN-LAST:event_bodegaBotonMouseReleased
 
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -107,6 +116,8 @@ public class JuegoPrincipal extends javax.swing.JFrame {
       private javax.swing.JButton mercadoBoton;
       private javax.swing.JLabel monedasJugador;
       private javax.swing.JLabel nombreJugador;
+      private javax.swing.JPanel panelBodega;
+      private javax.swing.JPanel panelMercado;
       private javax.swing.JPanel panelTerreno;
       private javax.swing.JLabel vidaJugador;
       // End of variables declaration//GEN-END:variables
