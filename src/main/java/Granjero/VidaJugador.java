@@ -4,6 +4,7 @@ import Procesos.Vida;
 import Vivo.SerVivo;
 import static java.lang.Thread.interrupted;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,9 +57,10 @@ public class VidaJugador extends Thread {
                               jugador.observadorVida(vidaJugadorJLabel, jugador.getVidaSer(), this);
                               hp = jugador.getVidaSer();
                               interrupted();
-                              
                         }
                   }
             }
+            JOptionPane.showMessageDialog(null, "Ya no puede seguir jugando");
       }
+      
 }

@@ -321,5 +321,4 @@ public class Inventario {
       public void setLabeltamarindoC(JLabel labeltamarindoC) {
             this.labeltamarindoC = labeltamarindoC;
       }
-
 }

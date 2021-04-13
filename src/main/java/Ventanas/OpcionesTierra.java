@@ -2,11 +2,13 @@ package Ventanas;
 
 import Plantas.*;
 import Animales.*;
+import Granjero.Inventario;
 import Terrenos.*;
 import TiposTerrenos.Tierra;
 import TiposTerrenos.seteadorImagenesTerreno;
 import Vivo.SerVivo;
 import Granjero.Jugador;
+import Items.Item;
 
 public class OpcionesTierra extends javax.swing.JFrame {
 
@@ -15,11 +17,14 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private Jugador jugador;
       private SuperficieTerreno botonPulsado;
       private seteadorImagenesTerreno imageSetter;
-
-      public OpcionesTierra(SuperficieTerreno celdaRecibida, Jugador jugador) {
+      private Inventario inventario;
+      private Item itemKillItem;
+      private Item itemRecurso;
+      
+      public OpcionesTierra(SuperficieTerreno celdaRecibida, Inventario inventario) {
             initComponents();
             this.botonPulsado = celdaRecibida;
-            this.jugador =jugador;
+            this.inventario = inventario;
             // imageSetter = new seteadorImagenesTerreno();
             this.tierra = new Tierra(true, false);
             //  imageSetter.maizSembrado(Maiz, botonPulsado);
@@ -222,6 +227,8 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
       private void TamarindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TamarindoActionPerformed
             TamarindoArbol tamarindo = new TamarindoArbol();
+            inventario.getSemillaTamarindo().setCantidad(inventario.getSemillaTamarindo().getCantidad() - 1);
+            this.itemKillItem = inventario.getTamarindo();
             this.serVivo = tamarindo;
             tierra.sembrar(tamarindo, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
@@ -231,6 +238,8 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void AguacaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AguacaeActionPerformed
             AguacateArbol aguacate = new AguacateArbol();
             this.serVivo = aguacate;
+            inventario.getSemillaAgua().setCantidad(inventario.getSemillaAgua().getCantidad()-1);
+            this.itemKillItem=inventario.getAguacate();
             tierra.sembrar(aguacate, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
             setBotonesPlanta();
@@ -239,6 +248,8 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void FrijolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrijolesActionPerformed
             Frijol frijol = new Frijol();
             this.serVivo = frijol;
+            inventario.getSemillaFrijol().setCantidad(inventario.getAguacate().getCantidad()-1);
+            this.itemKillItem=inventario.getFrijol();
             tierra.sembrar(frijol, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
             setBotonesPlanta();
@@ -248,7 +259,7 @@ public class OpcionesTierra extends javax.swing.JFrame {
           if (tierra.isParcela() == false) {
             tierra.fertilizar(this.serVivo); 
           } else {
-                tierra.obtenerRecursos(this.serVivo);
+                tierra.obtenerRecursos(this.serVivo, this.itemRecurso);
           }
       }//GEN-LAST:event_botonFertilizanteActionPerformed
 
@@ -273,15 +284,17 @@ public class OpcionesTierra extends javax.swing.JFrame {
 
       private void botonCosechadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCosechadorActionPerformed
             if(tierra.isParcela() == false) {
-            tierra.cosechar(this.serVivo);
+            tierra.cosechar(this.serVivo, this.itemKillItem);
             } else {
-                  tierra.destazarAnimal(this.serVivo);
+                  tierra.destazarAnimal(this.serVivo, this.itemKillItem);
             }
       }//GEN-LAST:event_botonCosechadorActionPerformed
 
       private void MaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaizActionPerformed
             Maiz maiz = new Maiz();
             this.serVivo = maiz;
+            inventario.getSemillaMaiz().setCantidad(inventario.getSemillaMaiz().getCantidad()-1);
+            this.itemKillItem=inventario.getMazorca();
             tierra.sembrar(maiz, siembraLabel, sembrar, edadColocao, imagenSiembraLabel);
             this.tierra.setLibre(false);
             setBotonesPlanta();
@@ -291,6 +304,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void vacaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacaAnimalActionPerformed
             Vaca vaca = new Vaca();
             this.serVivo = vaca;
+            inventario.getBecerro().setCantidad(inventario.getBecerro().getCantidad()-1);
+            this.itemKillItem = inventario.getCarneRes();
+            this.itemRecurso=inventario.getLeche();
             tierra.colocar(vaca, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
             setBotonesAnimal();
       }//GEN-LAST:event_vacaAnimalActionPerformed
@@ -298,6 +314,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void cerdoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerdoAnimalActionPerformed
             Cerdo cerdo = new Cerdo();
             this.serVivo = cerdo;
+            inventario.getCerdo().setCantidad(inventario.getCerdo().getCantidad()-1);
+            this.itemKillItem=inventario.getCarneCerdo();
+            this.itemRecurso=inventario.getHuevo();
             tierra.colocar(cerdo, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
             setBotonesAnimal();
       }//GEN-LAST:event_cerdoAnimalActionPerformed
@@ -305,6 +324,9 @@ public class OpcionesTierra extends javax.swing.JFrame {
       private void gallinaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallinaAnimalActionPerformed
             Gallina gallina = new Gallina();
             this.serVivo = gallina;
+            inventario.getPollito().setCantidad(inventario.getPollito().getCantidad()-1);
+            this.itemKillItem=inventario.getCarnePollo();
+            this.itemRecurso=inventario.getHuevo();
             tierra.colocar(gallina, siembraLabel, colocarAnimales, edadColocao, imagenSiembraLabel);
             setBotonesAnimal();
       }//GEN-LAST:event_gallinaAnimalActionPerformed

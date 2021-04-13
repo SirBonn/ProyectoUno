@@ -1,11 +1,13 @@
 package TiposTerrenos;
 
+import Items.Item;
 import Vivo.ManejadorSeresVivos;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Vivo.*;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Tierra extends TipoTerreno {
 
@@ -56,9 +58,10 @@ public class Tierra extends TipoTerreno {
             granjero.Fertilizar(1);
       }
 
-      public void cosechar(SerVivo planta) {
+      public void cosechar(SerVivo planta ,Item item) {
             if (planta.getEdadSer() == 3) {
-                  System.out.println("acabas de cosechar, has recibido 2 mazorcas");
+                  JOptionPane.showMessageDialog(null, "Haz obtenido recursos, consulta el inventario");
+                  item.setCantidad(item.getCantidad()+3);
                   granjero.getCrecer().interrupt();
                   granjero.getVida().interrupt();
             }
@@ -70,9 +73,10 @@ public class Tierra extends TipoTerreno {
             }
       }
 
-      public void destazarAnimal(SerVivo animal) {
+      public void destazarAnimal(SerVivo animal, Item item) {
             if (animal.getEdadSer() == 3) {
-                  System.out.println("acabas de matar a la vaca");
+                  JOptionPane.showMessageDialog(null, "Haz obtenido recursos, consulta tu inventario!");
+                  item.setCantidad(item.getCantidad()+5);
                   granjero.getCrecer().interrupt();
                   granjero.getVida().interrupt();
             }
@@ -84,11 +88,11 @@ public class Tierra extends TipoTerreno {
             }
       }
 
-      public void obtenerRecursos(SerVivo animal) {
+      public void obtenerRecursos(SerVivo animal, Item item) {
             if (animal.getEdadSer() == 3) {
-                  System.out.println("acabas de ordeñar a la vaca");
+                  JOptionPane.showMessageDialog(null,"Acabas de obtener recursos, revisa tu inventario");
+                  item.setCantidad(item.getCantidad()+5);
                   animal.setVidaSer(1);
-
             }
             if (animal.getEdadSer() <= 2) {
                   System.out.println("espera un poco mas, la cosecha casi esta lista");

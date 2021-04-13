@@ -5,6 +5,8 @@
  */
 package Terrenos;
 
+import Granjero.Jugador;
+
 /**
  *
  * @author byron
@@ -13,10 +15,9 @@ public class Granja {
 
       private Terreno[][] suelo;
       
-      
-      public Granja() {
+      public Granja(Jugador jugador) {
              CreadorTerreno creadorTerreno = new CreadorTerreno();
-            this.suelo = creadorTerreno.crearTerrenoInicial();
+            this.suelo = creadorTerreno.crearTerrenoInicial(jugador);
       }
 
       public Terreno[][] getSuelo() {

@@ -10,26 +10,29 @@ import Granjero.*;
 
 public class JuegoPrincipal extends javax.swing.JFrame {
 
-      private final Jugador jugador;
+      public final Jugador jugador;
       private final ManejadorTerreno manejadorTerreno;
       private final ManejadorJugador manejadorJugador;
       private final Granja granja;
       private Bodega bodegaPanel;
       private Mercado mercadoPanel;
-      private Inventario inventario;
+      public Inventario inventario;
 
       public JuegoPrincipal(Jugador jugador) {
             initComponents();
             setLocationRelativeTo(null);
             this.jugador = jugador;
-            this.granja = new Granja();
-            this.inventario = new Inventario();
-            this.manejadorJugador = new ManejadorJugador(jugador, this.inventario);
-            this.manejadorTerreno = new ManejadorTerreno(panelTerreno, granja.getSuelo(), jugador);
+            this.granja = new Granja(this.jugador);
+            this.inventario = jugador.getInventario();
+            this.manejadorTerreno = new ManejadorTerreno(panelTerreno, granja.getSuelo(), this.inventario);
+            this.manejadorJugador = new ManejadorJugador(this.jugador, this.inventario);
+            //this.manejadorTerreno = new ManejadorTerreno(panelTerreno, granja.getSuelo(), this.inventario);
             this.bodegaPanel = new Bodega(panelBodega, this.jugador, this.inventario);
             this.mercadoPanel = new Mercado(panelMercado, this.jugador, this.inventario);
+            //this.manejadorTerreno = new ManejadorTerreno(panelTerreno, granja.getSuelo(), jugador);
+
             panelMercado.setVisible(false);
-            panelMercado.add( mercadoPanel);
+            panelMercado.add(mercadoPanel);
             panelBodega.setVisible(false);
             panelBodega.add(bodegaPanel);
             manejadorJugador.mostarDatos(monedasJugador, nombreJugador);
@@ -105,10 +108,18 @@ public class JuegoPrincipal extends javax.swing.JFrame {
       }//GEN-LAST:event_mercadoBotonMouseReleased
 
       private void bodegaBotonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bodegaBotonMouseReleased
-      panelBodega.setVisible(true);
+            panelBodega.setVisible(true);
       }//GEN-LAST:event_bodegaBotonMouseReleased
 
+      public Jugador getJugador() {
+            return jugador;
+      }
 
+      public Inventario getInventario() {
+            return inventario;
+      }
+
+      
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JLabel FondoGranja;
       private javax.swing.JButton bodegaBoton;

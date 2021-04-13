@@ -1,5 +1,6 @@
 package Terrenos;
 
+import Granjero.Inventario;
 import Granjero.Jugador;
 import TiposTerrenos.*;
 import Ventanas.*;
@@ -9,14 +10,8 @@ public class ManejadorTerreno {
 
       private JPanel sueloJPanel;
       private Terreno[][] distribucionSuelos;
-
-      private Agua agua;
-      private Tierra tierra;
-      private Desierto desierto;
-      private Icon imagen;
       private SuperficieTerreno botonRecibido;
-      private Jugador jugador;
-
+      private Inventario inventarioNuevo;
       OpcionesAgua ventanaAgua; //= new OpcionesAgua();
       OpcionesDesierto ventanaDesierto = new OpcionesDesierto();
       OpcionesTierra ventanaTierra; // = new OpcionesTierra();
@@ -24,13 +19,14 @@ public class ManejadorTerreno {
       public ManejadorTerreno() {
       }
 
-      public ManejadorTerreno(JPanel sueloJPanel, Terreno[][] distribucionSuelos, Jugador jugador) {
+      public ManejadorTerreno(JPanel sueloJPanel, Terreno[][] distribucionSuelos, Inventario inventario) {
+             this.inventarioNuevo=inventario;
             this.sueloJPanel = sueloJPanel;
             this.distribucionSuelos = distribucionSuelos;
-            this.jugador = jugador;
             dibujarSuelo();
-      }
-
+           
+      }     
+      
       public void dibujarSuelo() {
             for (int x = 0; x < 5; x++) {
                   for (int y = 0; y < 5; y++) {
@@ -40,23 +36,20 @@ public class ManejadorTerreno {
             }
       }
 
-      public void setBotonRecibido(SuperficieTerreno botonRecibido) {
-            this.botonRecibido = botonRecibido;
-      }
-
-      public ManejadorTerreno(SuperficieTerreno botonRecibido) {
-            this.botonRecibido = botonRecibido;
+      public Inventario getInventario() {
+            return inventarioNuevo;
       }
 
       
-      public JFrame opcionesTerreno(TipoTerreno celdarecibida) {
+
+      public JFrame opcionesTerreno(TipoTerreno celdarecibida, Inventario inventario) {
             
             if ("Agua".equals(celdarecibida.getNombre())) {
-                  ventanaAgua = new OpcionesAgua(this.botonRecibido, jugador);
+                  ventanaAgua = new OpcionesAgua(this.botonRecibido);
                   return ventanaAgua;
             }
             if ("Tierra".equals(celdarecibida.getNombre())) {
-                  ventanaTierra = new OpcionesTierra(this.botonRecibido, jugador);
+                  ventanaTierra = new OpcionesTierra(this.botonRecibido, inventario);
                   return ventanaTierra;
             } else {
                   return ventanaDesierto;

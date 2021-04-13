@@ -37,7 +37,7 @@ public class Mercado extends javax.swing.JPanel {
             jPanel1 = new javax.swing.JPanel();
             compraBoton = new javax.swing.JButton();
             cerrar = new javax.swing.JButton();
-            jButton2 = new javax.swing.JButton();
+            venderButton = new javax.swing.JButton();
             maizCheck = new javax.swing.JCheckBox();
             frijolCheck = new javax.swing.JCheckBox();
             aguacateCheck = new javax.swing.JCheckBox();
@@ -82,10 +82,10 @@ public class Mercado extends javax.swing.JPanel {
                   }
             });
 
-            jButton2.setText("VENDER");
-            jButton2.addActionListener(new java.awt.event.ActionListener() {
+            venderButton.setText("VENDER");
+            venderButton.addActionListener(new java.awt.event.ActionListener() {
                   public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton2ActionPerformed(evt);
+                        venderButtonActionPerformed(evt);
                   }
             });
 
@@ -120,6 +120,8 @@ public class Mercado extends javax.swing.JPanel {
             cPolloCheck.setText("Carne de Pollo");
 
             huevosCheck.setText("Huevos");
+
+            cantidadText.setText("0");
 
             jLabel1.setText("Cantidad:");
 
@@ -161,7 +163,7 @@ public class Mercado extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                           .addComponent(cantidadText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                          .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                          .addComponent(venderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(16, Short.MAX_VALUE))
             );
             layout.setVerticalGroup(
@@ -208,7 +210,7 @@ public class Mercado extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                               .addComponent(compraBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addComponent(venderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cerrar)
                         .addContainerGap())
@@ -217,20 +219,20 @@ public class Mercado extends javax.swing.JPanel {
 
       private void compraBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraBotonActionPerformed
             this.jugador.setMonedas(jugador.getMonedas() - 5);
-            validarVenta();
+            validarCompra();
       }//GEN-LAST:event_compraBotonActionPerformed
 
       private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
             panelSeteado.setVisible(false);
       }//GEN-LAST:event_cerrarActionPerformed
 
-      private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      private void venderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venderButtonActionPerformed
+            this.jugador.setMonedas(jugador.getMonedas() + 5);
+            validarVenta();
+      }//GEN-LAST:event_venderButtonActionPerformed
 
-
-      }//GEN-LAST:event_jButton2ActionPerformed
-
-      private void validarVenta() {
-            String seleccion = "";
+      private void validarCompra() {
+            String seleccion = "Selecciona una casilla";
             int cantidad = Integer.parseInt(cantidadText.getText());
             if (maizCheck.isSelected()) {
                   jugador.comprar(cantidad, inventario.getMazorca());
@@ -295,15 +297,80 @@ public class Mercado extends javax.swing.JPanel {
             if (lecheCheck.isSelected()) {
                   jugador.comprar(cantidad, inventario.getLeche());
                   seleccion += "Compro " + cantidadText.getText() + "Litros de leche";
-            } else {
-                  seleccion += "Seleccione una casilla para comprar";
             }
             JOptionPane.showMessageDialog(null, seleccion);
       }
 
-      private void validarCompra() {
-
+      private void validarVenta() {
+            String seleccion = "Selecciona una casilla";
+            int cantidad = Integer.parseInt(cantidadText.getText());
+            if (maizCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getMazorca());
+                  seleccion += "Vendio " + cantidadText.getText() + "Mazorcas";
+            }
+            if (frijolCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getFrijol());
+                  seleccion += "Vendio " + cantidadText.getText() + "Frijoles";
+            }
+            if (aguacateCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getAguacate());
+                  seleccion += "Vendio " + cantidadText.getText() + "aguacates";
+            }
+            if (tamarindoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getTamarindo());
+                  seleccion += "Vendio " + cantidadText.getText() + "tamarindo";
+            }
+            if (sMaizCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaMaiz());
+                  seleccion += "Vendio " + cantidadText.getText() + "Semillas de Maiz";
+            }
+            if (sFrijolCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaFrijol());
+                  seleccion += "Vendio " + cantidadText.getText() + "Semillas de frijol";
+            }
+            if (sAgucateCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaAgua());
+                  seleccion += "Vendio " + cantidadText.getText() + "retoños de aguacate";
+            }
+            if (sTamarindoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getSemillaTamarindo());
+                  seleccion += "Vendio " + cantidadText.getText() + "Retoños de tamarindo";
+            }
+            if (pollitosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getPollito());
+                  seleccion += "Vendio " + cantidadText.getText() + "Pollitos";
+            }
+            if (cerditosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCerdo());
+                  seleccion += "Vendio " + cantidadText.getText() + "cerditos";
+            }
+            if (becerrosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getBecerro());
+                  seleccion += "Vendio " + cantidadText.getText() + "Becerros";
+            }
+            if (cResCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarneRes());
+                  seleccion += "Vendio " + cantidadText.getText() + "Filetes de res";
+            }
+            if (cCerditoCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarneCerdo());
+                  seleccion += "Vendio " + cantidadText.getText() + "Costillas de cerdo";
+            }
+            if (cPolloCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getCarnePollo());
+                  seleccion += "Vendio " + cantidadText.getText() + "Pechuguitas de pollo";
+            }
+            if (huevosCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getHuevo());
+                  seleccion += "Vendio " + cantidadText.getText() + "Huevos";
+            }
+            if (lecheCheck.isSelected()) {
+                  jugador.comprar(cantidad, inventario.getLeche());
+                  seleccion += "Vendio " + cantidadText.getText() + "Litros de leche";
+            }
+            JOptionPane.showMessageDialog(null, seleccion);
       }
+
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JCheckBox aguacateCheck;
@@ -317,7 +384,6 @@ public class Mercado extends javax.swing.JPanel {
       private javax.swing.JButton compraBoton;
       private javax.swing.JCheckBox frijolCheck;
       private javax.swing.JCheckBox huevosCheck;
-      private javax.swing.JButton jButton2;
       private javax.swing.JLabel jLabel1;
       private javax.swing.JPanel jPanel1;
       private javax.swing.JCheckBox lecheCheck;
@@ -328,5 +394,6 @@ public class Mercado extends javax.swing.JPanel {
       private javax.swing.JCheckBox sMaizCheck;
       private javax.swing.JCheckBox sTamarindoCheck;
       private javax.swing.JCheckBox tamarindoCheck;
+      private javax.swing.JButton venderButton;
       // End of variables declaration//GEN-END:variables
 }

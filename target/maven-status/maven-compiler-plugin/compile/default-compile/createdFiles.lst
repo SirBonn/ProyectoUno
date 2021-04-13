@@ -23,6 +23,7 @@ Ventanas\JuegoPrincipal.class
 Ventanas\Mercado$1.class
 Items\Becerro.class
 Ventanas\OpcionesTierra$13.class
+Terrenos\SuperficieTerreno.class
 Items\SemillaFrijol.class
 Terrenos\Granja.class
 Ventanas\OpcionesAgua$1.class

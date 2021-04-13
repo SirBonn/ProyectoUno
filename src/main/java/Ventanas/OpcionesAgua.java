@@ -6,7 +6,6 @@
 package Ventanas;
 
 import Terrenos.SuperficieTerreno;
-import Granjero.Jugador;
 
 /**
  *
@@ -15,12 +14,11 @@ import Granjero.Jugador;
 public class OpcionesAgua extends javax.swing.JFrame {
 
      private SuperficieTerreno botonPulsado;
-     private Jugador jugador;
      
-      public OpcionesAgua(SuperficieTerreno celdaRecibida, Jugador jugador) {
+      public OpcionesAgua(SuperficieTerreno celdaRecibida) {
             initComponents();
             this.botonPulsado = celdaRecibida;
-            this.jugador = jugador;
+
       }
 
       /**
